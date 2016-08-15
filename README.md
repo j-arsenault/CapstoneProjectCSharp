@@ -21,6 +21,9 @@ Documentation Site:
 ##To-Do's
 * Validation class
 * ProtechTools Class
+
+##Developer Team
+# Ian & Jameson
  
 
 ## Deadline: September 21, 2016
