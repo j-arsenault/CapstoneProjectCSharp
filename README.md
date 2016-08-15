@@ -23,7 +23,7 @@ Documentation Site:
 * ProtechTools Class
 
 ##Developer Team
-# Ian & Jameson
+ * Ian & Jameson
  
 
 ## Deadline: September 21, 2016
