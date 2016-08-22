@@ -50,8 +50,44 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="InsuranceInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsuranceInfo.Designer.cs">
+      <DependentUpon>InsuranceInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MedicalHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedicalHistory.Designer.cs">
+      <DependentUpon>MedicalHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientInformation.Designer.cs">
+      <DependentUpon>PatientInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsuranceInfo.resx">
+      <DependentUpon>InsuranceInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedicalHistory.resx">
+      <DependentUpon>MedicalHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientInformation.resx">
+      <DependentUpon>PatientInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -61,6 +97,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
