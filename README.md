@@ -14,18 +14,18 @@ Documentation Site:
 #To-Do's [Important]
 * Download Metro UI Framework
 * Login form
- - Build Login Form
+ - [x] Build Login Form
  - Username/Password
  - Error message/Acceptance message when logging in
  - Once logged in, Add/Search buttons appear
  
 * Search Form
- - Build Search Form
+ - [x] Build Search Form
  - Ability to search Patients via ID or First/Last Name
  - Ability to double click a patient and open up their Patient Demographic form
  
 * Patient Demographics Form
- - Build Patient Demographics Form
+ - [x] Build Patient Demographics Form
  - Ability to add/update patient records
  - Record all patient data
  - Ability to click Medical History button and be brought to the Medical History Form
@@ -33,11 +33,11 @@ Documentation Site:
  - Ability to copy patients Address information into the "Emergency Contact" Address information sections
 
 * Insurance form
- - Build Insurance Form
+ - [x] Build Insurance Form
  - Ability to add or update patient Insurance information
 
 * Medical History form
- - Build Medical History Form
+ - [x] Build Medical History Form
  - Ability to track patient Medical Information
  - Fix illnesses section to allow illnesses to be added on the fly, and only populate those illnesses a patient has
 * Update Visio Database diagram with the new fixes to the Medical History table and make the changes SQL Server Database
