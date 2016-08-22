@@ -1,7 +1,7 @@
 # CapstoneProjectCSharp
 Capstone Project Repository -- C Sharp 
 
-![Statys](https://img.shields.io/badge/Complete-5%25-orange.svg) [![CircleCI](https://img.shields.io/circleci/project/BrightFlair/PHP.Gt.svg?maxAge=2592000?style=flat-square)]()
+![Statys](https://img.shields.io/badge/Complete-15%25-orange.svg) [![CircleCI](https://img.shields.io/circleci/project/BrightFlair/PHP.Gt.svg?maxAge=2592000?style=flat-square)]()
 ![Statys](https://img.shields.io/badge/Team Members-Ian + Jameson-red.svg)
 ![Statys](https://img.shields.io/badge/Frameworks-Metro UI Modern Metro Framework-blue.svg)
 
