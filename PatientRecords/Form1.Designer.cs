@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.pnlControls = new System.Windows.Forms.Panel();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.btnAddPatient = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.btnAddPatient = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.lblHeader = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -47,19 +47,22 @@
             // 
             this.pnlControls.Controls.Add(this.btnSearch);
             this.pnlControls.Controls.Add(this.btnAddPatient);
+            this.pnlControls.Enabled = false;
             this.pnlControls.Location = new System.Drawing.Point(108, 392);
             this.pnlControls.Name = "pnlControls";
             this.pnlControls.Size = new System.Drawing.Size(513, 157);
             this.pnlControls.TabIndex = 0;
+            this.pnlControls.Visible = false;
             // 
-            // btnLogin
+            // btnSearch
             // 
-            this.btnLogin.Location = new System.Drawing.Point(230, 203);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 1;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(315, 67);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(102, 23);
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.Text = "Search Patients";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnAddPatient
             // 
@@ -69,15 +72,17 @@
             this.btnAddPatient.TabIndex = 2;
             this.btnAddPatient.Text = "Add New Patient";
             this.btnAddPatient.UseVisualStyleBackColor = true;
+            this.btnAddPatient.Click += new System.EventHandler(this.btnAddPatient_Click);
             // 
-            // btnSearch
+            // btnLogin
             // 
-            this.btnSearch.Location = new System.Drawing.Point(333, 67);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(102, 23);
-            this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "Search Patients";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnLogin.Location = new System.Drawing.Point(230, 203);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.TabIndex = 1;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblHeader
             // 
@@ -110,11 +115,10 @@
             // lblFeedback
             // 
             this.lblFeedback.AutoSize = true;
-            this.lblFeedback.Location = new System.Drawing.Point(60, 157);
+            this.lblFeedback.Location = new System.Drawing.Point(124, 142);
             this.lblFeedback.Name = "lblFeedback";
-            this.lblFeedback.Size = new System.Drawing.Size(418, 13);
+            this.lblFeedback.Size = new System.Drawing.Size(0, 13);
             this.lblFeedback.TabIndex = 7;
-            this.lblFeedback.Text = "-- WARNING APPEARS HERE WHEN THE WRONG INFORMATION IS ENTERED---";
             // 
             // txtUName
             // 

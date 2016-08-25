@@ -100,6 +100,9 @@
             this.lblEmployer = new System.Windows.Forms.Label();
             this.lblEmployerPhone = new System.Windows.Forms.Label();
             this.gbEmergencyInformation = new System.Windows.Forms.GroupBox();
+            this.cmbEmergencyState = new System.Windows.Forms.ComboBox();
+            this.txtEmergencyCity = new System.Windows.Forms.TextBox();
+            this.lblEmergencyCity = new System.Windows.Forms.Label();
             this.btnCopyAddress = new System.Windows.Forms.Button();
             this.txtEmergencyAlternatePhone = new System.Windows.Forms.TextBox();
             this.txtEmergencyPhone = new System.Windows.Forms.TextBox();
@@ -122,9 +125,6 @@
             this.lblEmergencyLname = new System.Windows.Forms.Label();
             this.lblEmergencyMname = new System.Windows.Forms.Label();
             this.lblEmergencyFname = new System.Windows.Forms.Label();
-            this.txtEmergencyCity = new System.Windows.Forms.TextBox();
-            this.lblEmergencyCity = new System.Windows.Forms.Label();
-            this.cmbEmergencyState = new System.Windows.Forms.ComboBox();
             this.lblFeedback = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -812,6 +812,31 @@
             this.gbEmergencyInformation.TabStop = false;
             this.gbEmergencyInformation.Text = "Emergency Contact Information";
             // 
+            // cmbEmergencyState
+            // 
+            this.cmbEmergencyState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEmergencyState.FormattingEnabled = true;
+            this.cmbEmergencyState.Location = new System.Drawing.Point(417, 58);
+            this.cmbEmergencyState.Name = "cmbEmergencyState";
+            this.cmbEmergencyState.Size = new System.Drawing.Size(158, 21);
+            this.cmbEmergencyState.TabIndex = 81;
+            // 
+            // txtEmergencyCity
+            // 
+            this.txtEmergencyCity.Location = new System.Drawing.Point(415, 27);
+            this.txtEmergencyCity.Name = "txtEmergencyCity";
+            this.txtEmergencyCity.Size = new System.Drawing.Size(160, 20);
+            this.txtEmergencyCity.TabIndex = 80;
+            // 
+            // lblEmergencyCity
+            // 
+            this.lblEmergencyCity.AutoSize = true;
+            this.lblEmergencyCity.Location = new System.Drawing.Point(384, 30);
+            this.lblEmergencyCity.Name = "lblEmergencyCity";
+            this.lblEmergencyCity.Size = new System.Drawing.Size(27, 13);
+            this.lblEmergencyCity.TabIndex = 79;
+            this.lblEmergencyCity.Text = "City:";
+            // 
             // btnCopyAddress
             // 
             this.btnCopyAddress.Location = new System.Drawing.Point(185, 235);
@@ -994,31 +1019,6 @@
             this.lblEmergencyFname.TabIndex = 56;
             this.lblEmergencyFname.Text = "First Name:";
             // 
-            // txtEmergencyCity
-            // 
-            this.txtEmergencyCity.Location = new System.Drawing.Point(415, 27);
-            this.txtEmergencyCity.Name = "txtEmergencyCity";
-            this.txtEmergencyCity.Size = new System.Drawing.Size(160, 20);
-            this.txtEmergencyCity.TabIndex = 80;
-            // 
-            // lblEmergencyCity
-            // 
-            this.lblEmergencyCity.AutoSize = true;
-            this.lblEmergencyCity.Location = new System.Drawing.Point(384, 30);
-            this.lblEmergencyCity.Name = "lblEmergencyCity";
-            this.lblEmergencyCity.Size = new System.Drawing.Size(27, 13);
-            this.lblEmergencyCity.TabIndex = 79;
-            this.lblEmergencyCity.Text = "City:";
-            // 
-            // cmbEmergencyState
-            // 
-            this.cmbEmergencyState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEmergencyState.FormattingEnabled = true;
-            this.cmbEmergencyState.Location = new System.Drawing.Point(417, 58);
-            this.cmbEmergencyState.Name = "cmbEmergencyState";
-            this.cmbEmergencyState.Size = new System.Drawing.Size(158, 21);
-            this.cmbEmergencyState.TabIndex = 81;
-            // 
             // lblFeedback
             // 
             this.lblFeedback.AutoSize = true;
@@ -1036,6 +1036,7 @@
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add Patient";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -1059,6 +1060,7 @@
             this.Controls.Add(this.gbPatientDemographics);
             this.Name = "PatientInformation";
             this.Text = "PatientInformation";
+            this.Load += new System.EventHandler(this.PatientInformation_Load);
             this.gbPatientDemographics.ResumeLayout(false);
             this.gbPatientDemographics.PerformLayout();
             this.gbPatientPhoto.ResumeLayout(false);

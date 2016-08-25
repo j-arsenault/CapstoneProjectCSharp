@@ -62,6 +62,7 @@
     <Compile Include="MedicalHistory.Designer.cs">
       <DependentUpon>MedicalHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="PatientInfo.cs" />
     <Compile Include="PatientInformation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +77,7 @@
     <Compile Include="Search.Designer.cs">
       <DependentUpon>Search.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validation.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
