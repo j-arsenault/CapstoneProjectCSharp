@@ -15,9 +15,11 @@ Documentation Site:
 * Download Metro UI Framework
 * Login form
  - [x] Build Login Form
- - Username/Password
- - Error message/Acceptance message when logging in
- - Once logged in, Add/Search buttons appear
+ - [x] Working Hardcoded Login
+ - Database Driven Login <--- STILL NEED TO DO WHEN EVERYTHING IS READY TO GO TO THE DATABASE
+ - [x] Username/Password
+ - [x] Error message/Acceptance message when logging in
+ - [x] Once logged in, Add/Search buttons appear
  
 * Search Form
  - [x] Build Search Form
@@ -26,6 +28,8 @@ Documentation Site:
  
 * Patient Demographics Form
  - [x] Build Patient Demographics Form
+ - [x] Created PatientInfo Class to house the private variables
+ - Click add button and all info prints to feedback label
  - Ability to add/update patient records
  - Record all patient data
  - Ability to click Medical History button and be brought to the Medical History Form
@@ -34,10 +38,12 @@ Documentation Site:
 
 * Insurance form
  - [x] Build Insurance Form
+ - Create InsuranceInfo class to house the private variables
  - Ability to add or update patient Insurance information
 
 * Medical History form
  - [x] Build Medical History Form
+ - Create MedicalHistoryInfo to house the private variables
  - Ability to track patient Medical Information
  - Fix illnesses section to allow illnesses to be added on the fly, and only populate those illnesses a patient has
 * Update Visio Database diagram with the new fixes to the Medical History table and make the changes SQL Server Database
@@ -45,7 +51,7 @@ Documentation Site:
 
 ##To-Do's
 * Validation class
- - Add to project
+ - [x] Add to project
  - Add any new validations that are needed
 * ProtechTools Class
  - Create DB string that connects to the Database
