@@ -69,7 +69,6 @@
             this.txtAlternatePhone = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.cmbState = new System.Windows.Forms.ComboBox();
-            this.cmbCountry = new System.Windows.Forms.ComboBox();
             this.lblPatientID = new System.Windows.Forms.Label();
             this.lblPID = new System.Windows.Forms.Label();
             this.lblAlternatePhone = new System.Windows.Forms.Label();
@@ -78,7 +77,6 @@
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblLname = new System.Windows.Forms.Label();
             this.lblSocialSecurity = new System.Windows.Forms.Label();
-            this.lblCountry = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblAddress2 = new System.Windows.Forms.Label();
             this.lblZip = new System.Windows.Forms.Label();
@@ -175,7 +173,6 @@
             this.gbPatientDemographics.Controls.Add(this.txtAlternatePhone);
             this.gbPatientDemographics.Controls.Add(this.txtPhone);
             this.gbPatientDemographics.Controls.Add(this.cmbState);
-            this.gbPatientDemographics.Controls.Add(this.cmbCountry);
             this.gbPatientDemographics.Controls.Add(this.lblPatientID);
             this.gbPatientDemographics.Controls.Add(this.lblPID);
             this.gbPatientDemographics.Controls.Add(this.lblAlternatePhone);
@@ -184,7 +181,6 @@
             this.gbPatientDemographics.Controls.Add(this.lblPhone);
             this.gbPatientDemographics.Controls.Add(this.lblLname);
             this.gbPatientDemographics.Controls.Add(this.lblSocialSecurity);
-            this.gbPatientDemographics.Controls.Add(this.lblCountry);
             this.gbPatientDemographics.Controls.Add(this.lblAddress);
             this.gbPatientDemographics.Controls.Add(this.lblAddress2);
             this.gbPatientDemographics.Controls.Add(this.lblZip);
@@ -280,9 +276,9 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(547, 26);
+            this.txtEmail.Location = new System.Drawing.Point(122, 408);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(210, 20);
+            this.txtEmail.Size = new System.Drawing.Size(174, 20);
             this.txtEmail.TabIndex = 40;
             // 
             // cmbMaritalStatus
@@ -304,7 +300,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(506, 29);
+            this.lblEmail.Location = new System.Drawing.Point(81, 411);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(35, 13);
             this.lblEmail.TabIndex = 26;
@@ -487,14 +483,14 @@
             // 
             // txtAlternatePhone
             // 
-            this.txtAlternatePhone.Location = new System.Drawing.Point(122, 411);
+            this.txtAlternatePhone.Location = new System.Drawing.Point(122, 380);
             this.txtAlternatePhone.Name = "txtAlternatePhone";
             this.txtAlternatePhone.Size = new System.Drawing.Size(174, 20);
             this.txtAlternatePhone.TabIndex = 17;
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(122, 381);
+            this.txtPhone.Location = new System.Drawing.Point(122, 350);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(174, 20);
             this.txtPhone.TabIndex = 16;
@@ -507,14 +503,6 @@
             this.cmbState.Name = "cmbState";
             this.cmbState.Size = new System.Drawing.Size(174, 21);
             this.cmbState.TabIndex = 15;
-            // 
-            // cmbCountry
-            // 
-            this.cmbCountry.FormattingEnabled = true;
-            this.cmbCountry.Location = new System.Drawing.Point(122, 350);
-            this.cmbCountry.Name = "cmbCountry";
-            this.cmbCountry.Size = new System.Drawing.Size(174, 21);
-            this.cmbCountry.TabIndex = 14;
             // 
             // lblPatientID
             // 
@@ -536,7 +524,7 @@
             // lblAlternatePhone
             // 
             this.lblAlternatePhone.AutoSize = true;
-            this.lblAlternatePhone.Location = new System.Drawing.Point(30, 414);
+            this.lblAlternatePhone.Location = new System.Drawing.Point(30, 383);
             this.lblAlternatePhone.Name = "lblAlternatePhone";
             this.lblAlternatePhone.Size = new System.Drawing.Size(86, 13);
             this.lblAlternatePhone.TabIndex = 13;
@@ -563,7 +551,7 @@
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(75, 384);
+            this.lblPhone.Location = new System.Drawing.Point(75, 353);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(41, 13);
             this.lblPhone.TabIndex = 12;
@@ -586,15 +574,6 @@
             this.lblSocialSecurity.Size = new System.Drawing.Size(80, 13);
             this.lblSocialSecurity.TabIndex = 5;
             this.lblSocialSecurity.Text = "Social Security:";
-            // 
-            // lblCountry
-            // 
-            this.lblCountry.AutoSize = true;
-            this.lblCountry.Location = new System.Drawing.Point(70, 353);
-            this.lblCountry.Name = "lblCountry";
-            this.lblCountry.Size = new System.Drawing.Size(46, 13);
-            this.lblCountry.TabIndex = 11;
-            this.lblCountry.Text = "Country:";
             // 
             // lblAddress
             // 
@@ -1091,7 +1070,6 @@
         private System.Windows.Forms.Label lblCity;
         private System.Windows.Forms.Label lblState;
         private System.Windows.Forms.Label lblZip;
-        private System.Windows.Forms.Label lblCountry;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblAlternatePhone;
         private System.Windows.Forms.TextBox txtFname;
@@ -1105,7 +1083,6 @@
         private System.Windows.Forms.TextBox txtAlternatePhone;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.ComboBox cmbState;
-        private System.Windows.Forms.ComboBox cmbCountry;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Label lblBirthdate;
