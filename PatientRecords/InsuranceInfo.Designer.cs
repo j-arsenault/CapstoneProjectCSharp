@@ -56,8 +56,6 @@
             this.txtSocialSecurityNum = new System.Windows.Forms.TextBox();
             this.txtInsurance = new System.Windows.Forms.TextBox();
             this.cmbPatientRelationship = new System.Windows.Forms.ComboBox();
-            this.rdbCoveredNo = new System.Windows.Forms.RadioButton();
-            this.rdbCoveredYes = new System.Windows.Forms.RadioButton();
             this.lblGroupNumber = new System.Windows.Forms.Label();
             this.lblPatientRelationship = new System.Windows.Forms.Label();
             this.lblCopayment = new System.Windows.Forms.Label();
@@ -65,7 +63,6 @@
             this.lblSubscriberBirthdate = new System.Windows.Forms.Label();
             this.lblSubscriberSocialSecurityNum = new System.Windows.Forms.Label();
             this.lblSubscriberName = new System.Windows.Forms.Label();
-            this.lblCovered = new System.Windows.Forms.Label();
             this.lblInsurance = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -112,9 +109,9 @@
             this.gbSecondary.Controls.Add(this.lblSecondarySubscriberSocialSecNum);
             this.gbSecondary.Controls.Add(this.lblSecondarySubscriberName);
             this.gbSecondary.Controls.Add(this.lblSecondaryInsurance);
-            this.gbSecondary.Location = new System.Drawing.Point(21, 328);
+            this.gbSecondary.Location = new System.Drawing.Point(21, 286);
             this.gbSecondary.Name = "gbSecondary";
-            this.gbSecondary.Size = new System.Drawing.Size(707, 253);
+            this.gbSecondary.Size = new System.Drawing.Size(707, 237);
             this.gbSecondary.TabIndex = 5;
             this.gbSecondary.TabStop = false;
             this.gbSecondary.Text = "Secondary Insurance (If necessary)";
@@ -259,8 +256,6 @@
             this.gbPrimary.Controls.Add(this.txtSocialSecurityNum);
             this.gbPrimary.Controls.Add(this.txtInsurance);
             this.gbPrimary.Controls.Add(this.cmbPatientRelationship);
-            this.gbPrimary.Controls.Add(this.rdbCoveredNo);
-            this.gbPrimary.Controls.Add(this.rdbCoveredYes);
             this.gbPrimary.Controls.Add(this.lblGroupNumber);
             this.gbPrimary.Controls.Add(this.lblPatientRelationship);
             this.gbPrimary.Controls.Add(this.lblCopayment);
@@ -268,60 +263,59 @@
             this.gbPrimary.Controls.Add(this.lblSubscriberBirthdate);
             this.gbPrimary.Controls.Add(this.lblSubscriberSocialSecurityNum);
             this.gbPrimary.Controls.Add(this.lblSubscriberName);
-            this.gbPrimary.Controls.Add(this.lblCovered);
             this.gbPrimary.Controls.Add(this.lblInsurance);
             this.gbPrimary.Location = new System.Drawing.Point(21, 49);
             this.gbPrimary.Name = "gbPrimary";
-            this.gbPrimary.Size = new System.Drawing.Size(707, 257);
+            this.gbPrimary.Size = new System.Drawing.Size(707, 215);
             this.gbPrimary.TabIndex = 4;
             this.gbPrimary.TabStop = false;
             this.gbPrimary.Text = "Primary Insurance";
             // 
             // dtpSubscriberBirthdate
             // 
-            this.dtpSubscriberBirthdate.Location = new System.Drawing.Point(132, 212);
+            this.dtpSubscriberBirthdate.Location = new System.Drawing.Point(132, 174);
             this.dtpSubscriberBirthdate.Name = "dtpSubscriberBirthdate";
             this.dtpSubscriberBirthdate.Size = new System.Drawing.Size(200, 20);
             this.dtpSubscriberBirthdate.TabIndex = 23;
             // 
             // txtCopayment
             // 
-            this.txtCopayment.Location = new System.Drawing.Point(445, 117);
+            this.txtCopayment.Location = new System.Drawing.Point(445, 79);
             this.txtCopayment.Name = "txtCopayment";
             this.txtCopayment.Size = new System.Drawing.Size(126, 20);
             this.txtCopayment.TabIndex = 22;
             // 
             // txtGroupNum
             // 
-            this.txtGroupNum.Location = new System.Drawing.Point(445, 75);
+            this.txtGroupNum.Location = new System.Drawing.Point(445, 37);
             this.txtGroupNum.Name = "txtGroupNum";
             this.txtGroupNum.Size = new System.Drawing.Size(126, 20);
             this.txtGroupNum.TabIndex = 21;
             // 
             // txtPolicyNum
             // 
-            this.txtPolicyNum.Location = new System.Drawing.Point(132, 117);
+            this.txtPolicyNum.Location = new System.Drawing.Point(132, 79);
             this.txtPolicyNum.Name = "txtPolicyNum";
             this.txtPolicyNum.Size = new System.Drawing.Size(173, 20);
             this.txtPolicyNum.TabIndex = 20;
             // 
             // txtSubscriberName
             // 
-            this.txtSubscriberName.Location = new System.Drawing.Point(132, 163);
+            this.txtSubscriberName.Location = new System.Drawing.Point(132, 125);
             this.txtSubscriberName.Name = "txtSubscriberName";
             this.txtSubscriberName.Size = new System.Drawing.Size(200, 20);
             this.txtSubscriberName.TabIndex = 19;
             // 
             // txtSocialSecurityNum
             // 
-            this.txtSocialSecurityNum.Location = new System.Drawing.Point(544, 163);
+            this.txtSocialSecurityNum.Location = new System.Drawing.Point(544, 125);
             this.txtSocialSecurityNum.Name = "txtSocialSecurityNum";
             this.txtSocialSecurityNum.Size = new System.Drawing.Size(126, 20);
             this.txtSocialSecurityNum.TabIndex = 18;
             // 
             // txtInsurance
             // 
-            this.txtInsurance.Location = new System.Drawing.Point(131, 75);
+            this.txtInsurance.Location = new System.Drawing.Point(131, 37);
             this.txtInsurance.Name = "txtInsurance";
             this.txtInsurance.Size = new System.Drawing.Size(174, 20);
             this.txtInsurance.TabIndex = 17;
@@ -330,37 +324,15 @@
             // 
             this.cmbPatientRelationship.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPatientRelationship.FormattingEnabled = true;
-            this.cmbPatientRelationship.Location = new System.Drawing.Point(544, 212);
+            this.cmbPatientRelationship.Location = new System.Drawing.Point(544, 174);
             this.cmbPatientRelationship.Name = "cmbPatientRelationship";
             this.cmbPatientRelationship.Size = new System.Drawing.Size(126, 21);
             this.cmbPatientRelationship.TabIndex = 15;
             // 
-            // rdbCoveredNo
-            // 
-            this.rdbCoveredNo.AutoSize = true;
-            this.rdbCoveredNo.Location = new System.Drawing.Point(287, 27);
-            this.rdbCoveredNo.Name = "rdbCoveredNo";
-            this.rdbCoveredNo.Size = new System.Drawing.Size(39, 17);
-            this.rdbCoveredNo.TabIndex = 13;
-            this.rdbCoveredNo.TabStop = true;
-            this.rdbCoveredNo.Text = "No";
-            this.rdbCoveredNo.UseVisualStyleBackColor = true;
-            // 
-            // rdbCoveredYes
-            // 
-            this.rdbCoveredYes.AutoSize = true;
-            this.rdbCoveredYes.Location = new System.Drawing.Point(224, 27);
-            this.rdbCoveredYes.Name = "rdbCoveredYes";
-            this.rdbCoveredYes.Size = new System.Drawing.Size(43, 17);
-            this.rdbCoveredYes.TabIndex = 14;
-            this.rdbCoveredYes.TabStop = true;
-            this.rdbCoveredYes.Text = "Yes";
-            this.rdbCoveredYes.UseVisualStyleBackColor = true;
-            // 
             // lblGroupNumber
             // 
             this.lblGroupNumber.AutoSize = true;
-            this.lblGroupNumber.Location = new System.Drawing.Point(360, 78);
+            this.lblGroupNumber.Location = new System.Drawing.Point(360, 40);
             this.lblGroupNumber.Name = "lblGroupNumber";
             this.lblGroupNumber.Size = new System.Drawing.Size(79, 13);
             this.lblGroupNumber.TabIndex = 10;
@@ -369,7 +341,7 @@
             // lblPatientRelationship
             // 
             this.lblPatientRelationship.AutoSize = true;
-            this.lblPatientRelationship.Location = new System.Drawing.Point(358, 215);
+            this.lblPatientRelationship.Location = new System.Drawing.Point(358, 177);
             this.lblPatientRelationship.Name = "lblPatientRelationship";
             this.lblPatientRelationship.Size = new System.Drawing.Size(180, 13);
             this.lblPatientRelationship.TabIndex = 7;
@@ -378,7 +350,7 @@
             // lblCopayment
             // 
             this.lblCopayment.AutoSize = true;
-            this.lblCopayment.Location = new System.Drawing.Point(360, 120);
+            this.lblCopayment.Location = new System.Drawing.Point(360, 82);
             this.lblCopayment.Name = "lblCopayment";
             this.lblCopayment.Size = new System.Drawing.Size(84, 13);
             this.lblCopayment.TabIndex = 6;
@@ -387,7 +359,7 @@
             // lblPolicyNumber
             // 
             this.lblPolicyNumber.AutoSize = true;
-            this.lblPolicyNumber.Location = new System.Drawing.Point(48, 120);
+            this.lblPolicyNumber.Location = new System.Drawing.Point(48, 82);
             this.lblPolicyNumber.Name = "lblPolicyNumber";
             this.lblPolicyNumber.Size = new System.Drawing.Size(78, 13);
             this.lblPolicyNumber.TabIndex = 5;
@@ -396,7 +368,7 @@
             // lblSubscriberBirthdate
             // 
             this.lblSubscriberBirthdate.AutoSize = true;
-            this.lblSubscriberBirthdate.Location = new System.Drawing.Point(14, 215);
+            this.lblSubscriberBirthdate.Location = new System.Drawing.Point(14, 177);
             this.lblSubscriberBirthdate.Name = "lblSubscriberBirthdate";
             this.lblSubscriberBirthdate.Size = new System.Drawing.Size(112, 13);
             this.lblSubscriberBirthdate.TabIndex = 4;
@@ -405,7 +377,7 @@
             // lblSubscriberSocialSecurityNum
             // 
             this.lblSubscriberSocialSecurityNum.AutoSize = true;
-            this.lblSubscriberSocialSecurityNum.Location = new System.Drawing.Point(360, 166);
+            this.lblSubscriberSocialSecurityNum.Location = new System.Drawing.Point(360, 128);
             this.lblSubscriberSocialSecurityNum.Name = "lblSubscriberSocialSecurityNum";
             this.lblSubscriberSocialSecurityNum.Size = new System.Drawing.Size(178, 13);
             this.lblSubscriberSocialSecurityNum.TabIndex = 3;
@@ -414,25 +386,16 @@
             // lblSubscriberName
             // 
             this.lblSubscriberName.AutoSize = true;
-            this.lblSubscriberName.Location = new System.Drawing.Point(28, 166);
+            this.lblSubscriberName.Location = new System.Drawing.Point(28, 128);
             this.lblSubscriberName.Name = "lblSubscriberName";
             this.lblSubscriberName.Size = new System.Drawing.Size(98, 13);
             this.lblSubscriberName.TabIndex = 2;
             this.lblSubscriberName.Text = "Subscriber\'s Name:";
             // 
-            // lblCovered
-            // 
-            this.lblCovered.AutoSize = true;
-            this.lblCovered.Location = new System.Drawing.Point(28, 29);
-            this.lblCovered.Name = "lblCovered";
-            this.lblCovered.Size = new System.Drawing.Size(179, 13);
-            this.lblCovered.TabIndex = 1;
-            this.lblCovered.Text = "Is the patient covered by insurance?";
-            // 
             // lblInsurance
             // 
             this.lblInsurance.AutoSize = true;
-            this.lblInsurance.Location = new System.Drawing.Point(69, 78);
+            this.lblInsurance.Location = new System.Drawing.Point(69, 40);
             this.lblInsurance.Name = "lblInsurance";
             this.lblInsurance.Size = new System.Drawing.Size(57, 13);
             this.lblInsurance.TabIndex = 0;
@@ -446,6 +409,7 @@
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Add Insurance";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -459,7 +423,7 @@
             // lblFeedback
             // 
             this.lblFeedback.AutoSize = true;
-            this.lblFeedback.Location = new System.Drawing.Point(42, 605);
+            this.lblFeedback.Location = new System.Drawing.Point(32, 543);
             this.lblFeedback.Name = "lblFeedback";
             this.lblFeedback.Size = new System.Drawing.Size(58, 13);
             this.lblFeedback.TabIndex = 10;
@@ -497,6 +461,7 @@
             this.Controls.Add(this.gbPrimary);
             this.Name = "InsuranceInfo";
             this.Text = "InsuranceInfo";
+            this.Load += new System.EventHandler(this.InsuranceInfo_Load);
             this.gbSecondary.ResumeLayout(false);
             this.gbSecondary.PerformLayout();
             this.gbPrimary.ResumeLayout(false);
@@ -536,8 +501,6 @@
         private System.Windows.Forms.TextBox txtSocialSecurityNum;
         private System.Windows.Forms.TextBox txtInsurance;
         private System.Windows.Forms.ComboBox cmbPatientRelationship;
-        private System.Windows.Forms.RadioButton rdbCoveredNo;
-        private System.Windows.Forms.RadioButton rdbCoveredYes;
         private System.Windows.Forms.Label lblGroupNumber;
         private System.Windows.Forms.Label lblPatientRelationship;
         private System.Windows.Forms.Label lblCopayment;
@@ -545,7 +508,6 @@
         private System.Windows.Forms.Label lblSubscriberBirthdate;
         private System.Windows.Forms.Label lblSubscriberSocialSecurityNum;
         private System.Windows.Forms.Label lblSubscriberName;
-        private System.Windows.Forms.Label lblCovered;
         private System.Windows.Forms.Label lblInsurance;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;

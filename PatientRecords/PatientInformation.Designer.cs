@@ -61,7 +61,6 @@
             this.txtFname = new System.Windows.Forms.TextBox();
             this.txtMname = new System.Windows.Forms.TextBox();
             this.txtLname = new System.Windows.Forms.TextBox();
-            this.txtSocialSecurity = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtAddress2 = new System.Windows.Forms.TextBox();
             this.txtCity = new System.Windows.Forms.TextBox();
@@ -76,7 +75,6 @@
             this.lblMname = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblLname = new System.Windows.Forms.Label();
-            this.lblSocialSecurity = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblAddress2 = new System.Windows.Forms.Label();
             this.lblZip = new System.Windows.Forms.Label();
@@ -104,7 +102,6 @@
             this.btnCopyAddress = new System.Windows.Forms.Button();
             this.txtEmergencyAlternatePhone = new System.Windows.Forms.TextBox();
             this.txtEmergencyPhone = new System.Windows.Forms.TextBox();
-            this.cmbEmergencyCountry = new System.Windows.Forms.ComboBox();
             this.txtEmergencyZip = new System.Windows.Forms.TextBox();
             this.txtEmergencyAddress2 = new System.Windows.Forms.TextBox();
             this.txtEmergencyAddress = new System.Windows.Forms.TextBox();
@@ -114,7 +111,6 @@
             this.txtEmergencyFname = new System.Windows.Forms.TextBox();
             this.lblEmergencyAlternatePhone = new System.Windows.Forms.Label();
             this.lblEmergencyPhone = new System.Windows.Forms.Label();
-            this.lblEmergencyCountry = new System.Windows.Forms.Label();
             this.lblEmergencyZip = new System.Windows.Forms.Label();
             this.lblEmergencyState = new System.Windows.Forms.Label();
             this.lblEmergencyAddress2 = new System.Windows.Forms.Label();
@@ -165,7 +161,6 @@
             this.gbPatientDemographics.Controls.Add(this.txtFname);
             this.gbPatientDemographics.Controls.Add(this.txtMname);
             this.gbPatientDemographics.Controls.Add(this.txtLname);
-            this.gbPatientDemographics.Controls.Add(this.txtSocialSecurity);
             this.gbPatientDemographics.Controls.Add(this.txtAddress);
             this.gbPatientDemographics.Controls.Add(this.txtAddress2);
             this.gbPatientDemographics.Controls.Add(this.txtCity);
@@ -180,7 +175,6 @@
             this.gbPatientDemographics.Controls.Add(this.lblMname);
             this.gbPatientDemographics.Controls.Add(this.lblPhone);
             this.gbPatientDemographics.Controls.Add(this.lblLname);
-            this.gbPatientDemographics.Controls.Add(this.lblSocialSecurity);
             this.gbPatientDemographics.Controls.Add(this.lblAddress);
             this.gbPatientDemographics.Controls.Add(this.lblAddress2);
             this.gbPatientDemographics.Controls.Add(this.lblZip);
@@ -201,6 +195,7 @@
             this.btnInsuranceInfo.TabIndex = 51;
             this.btnInsuranceInfo.Text = "Click For Details";
             this.btnInsuranceInfo.UseVisualStyleBackColor = true;
+            this.btnInsuranceInfo.Click += new System.EventHandler(this.btnInsuranceInfo_Click);
             // 
             // btnMedicalHistory
             // 
@@ -210,6 +205,7 @@
             this.btnMedicalHistory.TabIndex = 50;
             this.btnMedicalHistory.Text = "Medical History";
             this.btnMedicalHistory.UseVisualStyleBackColor = true;
+            this.btnMedicalHistory.Click += new System.EventHandler(this.btnMedicalHistory_Click);
             // 
             // txtInsuranceProvider
             // 
@@ -276,7 +272,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(122, 408);
+            this.txtEmail.Location = new System.Drawing.Point(122, 376);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(174, 20);
             this.txtEmail.TabIndex = 40;
@@ -300,7 +296,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(81, 411);
+            this.lblEmail.Location = new System.Drawing.Point(81, 379);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(35, 13);
             this.lblEmail.TabIndex = 26;
@@ -446,51 +442,44 @@
             this.txtLname.Size = new System.Drawing.Size(174, 20);
             this.txtLname.TabIndex = 23;
             // 
-            // txtSocialSecurity
-            // 
-            this.txtSocialSecurity.Location = new System.Drawing.Point(122, 156);
-            this.txtSocialSecurity.Name = "txtSocialSecurity";
-            this.txtSocialSecurity.Size = new System.Drawing.Size(100, 20);
-            this.txtSocialSecurity.TabIndex = 22;
-            // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(122, 188);
+            this.txtAddress.Location = new System.Drawing.Point(122, 156);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(174, 20);
             this.txtAddress.TabIndex = 21;
             // 
             // txtAddress2
             // 
-            this.txtAddress2.Location = new System.Drawing.Point(122, 219);
+            this.txtAddress2.Location = new System.Drawing.Point(122, 187);
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.Size = new System.Drawing.Size(174, 20);
             this.txtAddress2.TabIndex = 20;
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(122, 251);
+            this.txtCity.Location = new System.Drawing.Point(122, 219);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(174, 20);
             this.txtCity.TabIndex = 19;
             // 
             // txtZip
             // 
-            this.txtZip.Location = new System.Drawing.Point(122, 317);
+            this.txtZip.Location = new System.Drawing.Point(122, 285);
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(100, 20);
             this.txtZip.TabIndex = 18;
             // 
             // txtAlternatePhone
             // 
-            this.txtAlternatePhone.Location = new System.Drawing.Point(122, 380);
+            this.txtAlternatePhone.Location = new System.Drawing.Point(122, 348);
             this.txtAlternatePhone.Name = "txtAlternatePhone";
             this.txtAlternatePhone.Size = new System.Drawing.Size(174, 20);
             this.txtAlternatePhone.TabIndex = 17;
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(122, 350);
+            this.txtPhone.Location = new System.Drawing.Point(122, 318);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(174, 20);
             this.txtPhone.TabIndex = 16;
@@ -499,7 +488,7 @@
             // 
             this.cmbState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbState.FormattingEnabled = true;
-            this.cmbState.Location = new System.Drawing.Point(122, 285);
+            this.cmbState.Location = new System.Drawing.Point(122, 253);
             this.cmbState.Name = "cmbState";
             this.cmbState.Size = new System.Drawing.Size(174, 21);
             this.cmbState.TabIndex = 15;
@@ -524,7 +513,7 @@
             // lblAlternatePhone
             // 
             this.lblAlternatePhone.AutoSize = true;
-            this.lblAlternatePhone.Location = new System.Drawing.Point(30, 383);
+            this.lblAlternatePhone.Location = new System.Drawing.Point(30, 351);
             this.lblAlternatePhone.Name = "lblAlternatePhone";
             this.lblAlternatePhone.Size = new System.Drawing.Size(86, 13);
             this.lblAlternatePhone.TabIndex = 13;
@@ -551,7 +540,7 @@
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(75, 353);
+            this.lblPhone.Location = new System.Drawing.Point(75, 321);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(41, 13);
             this.lblPhone.TabIndex = 12;
@@ -566,19 +555,10 @@
             this.lblLname.TabIndex = 4;
             this.lblLname.Text = "Last Name:";
             // 
-            // lblSocialSecurity
-            // 
-            this.lblSocialSecurity.AutoSize = true;
-            this.lblSocialSecurity.Location = new System.Drawing.Point(36, 159);
-            this.lblSocialSecurity.Name = "lblSocialSecurity";
-            this.lblSocialSecurity.Size = new System.Drawing.Size(80, 13);
-            this.lblSocialSecurity.TabIndex = 5;
-            this.lblSocialSecurity.Text = "Social Security:";
-            // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(68, 191);
+            this.lblAddress.Location = new System.Drawing.Point(68, 159);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(48, 13);
             this.lblAddress.TabIndex = 6;
@@ -587,7 +567,7 @@
             // lblAddress2
             // 
             this.lblAddress2.AutoSize = true;
-            this.lblAddress2.Location = new System.Drawing.Point(59, 222);
+            this.lblAddress2.Location = new System.Drawing.Point(59, 190);
             this.lblAddress2.Name = "lblAddress2";
             this.lblAddress2.Size = new System.Drawing.Size(57, 13);
             this.lblAddress2.TabIndex = 7;
@@ -596,7 +576,7 @@
             // lblZip
             // 
             this.lblZip.AutoSize = true;
-            this.lblZip.Location = new System.Drawing.Point(63, 320);
+            this.lblZip.Location = new System.Drawing.Point(63, 288);
             this.lblZip.Name = "lblZip";
             this.lblZip.Size = new System.Drawing.Size(53, 13);
             this.lblZip.TabIndex = 10;
@@ -605,7 +585,7 @@
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(89, 254);
+            this.lblCity.Location = new System.Drawing.Point(89, 222);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(27, 13);
             this.lblCity.TabIndex = 8;
@@ -614,7 +594,7 @@
             // lblState
             // 
             this.lblState.AutoSize = true;
-            this.lblState.Location = new System.Drawing.Point(81, 288);
+            this.lblState.Location = new System.Drawing.Point(81, 256);
             this.lblState.Name = "lblState";
             this.lblState.Size = new System.Drawing.Size(35, 13);
             this.lblState.TabIndex = 9;
@@ -765,7 +745,6 @@
             this.gbEmergencyInformation.Controls.Add(this.btnCopyAddress);
             this.gbEmergencyInformation.Controls.Add(this.txtEmergencyAlternatePhone);
             this.gbEmergencyInformation.Controls.Add(this.txtEmergencyPhone);
-            this.gbEmergencyInformation.Controls.Add(this.cmbEmergencyCountry);
             this.gbEmergencyInformation.Controls.Add(this.txtEmergencyZip);
             this.gbEmergencyInformation.Controls.Add(this.txtEmergencyAddress2);
             this.gbEmergencyInformation.Controls.Add(this.txtEmergencyAddress);
@@ -775,7 +754,6 @@
             this.gbEmergencyInformation.Controls.Add(this.txtEmergencyFname);
             this.gbEmergencyInformation.Controls.Add(this.lblEmergencyAlternatePhone);
             this.gbEmergencyInformation.Controls.Add(this.lblEmergencyPhone);
-            this.gbEmergencyInformation.Controls.Add(this.lblEmergencyCountry);
             this.gbEmergencyInformation.Controls.Add(this.lblEmergencyZip);
             this.gbEmergencyInformation.Controls.Add(this.lblEmergencyState);
             this.gbEmergencyInformation.Controls.Add(this.lblEmergencyAddress2);
@@ -827,26 +805,17 @@
             // 
             // txtEmergencyAlternatePhone
             // 
-            this.txtEmergencyAlternatePhone.Location = new System.Drawing.Point(417, 196);
+            this.txtEmergencyAlternatePhone.Location = new System.Drawing.Point(417, 164);
             this.txtEmergencyAlternatePhone.Name = "txtEmergencyAlternatePhone";
             this.txtEmergencyAlternatePhone.Size = new System.Drawing.Size(154, 20);
             this.txtEmergencyAlternatePhone.TabIndex = 77;
             // 
             // txtEmergencyPhone
             // 
-            this.txtEmergencyPhone.Location = new System.Drawing.Point(417, 159);
+            this.txtEmergencyPhone.Location = new System.Drawing.Point(417, 127);
             this.txtEmergencyPhone.Name = "txtEmergencyPhone";
             this.txtEmergencyPhone.Size = new System.Drawing.Size(154, 20);
             this.txtEmergencyPhone.TabIndex = 76;
-            // 
-            // cmbEmergencyCountry
-            // 
-            this.cmbEmergencyCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEmergencyCountry.FormattingEnabled = true;
-            this.cmbEmergencyCountry.Location = new System.Drawing.Point(417, 124);
-            this.cmbEmergencyCountry.Name = "cmbEmergencyCountry";
-            this.cmbEmergencyCountry.Size = new System.Drawing.Size(154, 21);
-            this.cmbEmergencyCountry.TabIndex = 75;
             // 
             // txtEmergencyZip
             // 
@@ -902,7 +871,7 @@
             // lblEmergencyAlternatePhone
             // 
             this.lblEmergencyAlternatePhone.AutoSize = true;
-            this.lblEmergencyAlternatePhone.Location = new System.Drawing.Point(325, 199);
+            this.lblEmergencyAlternatePhone.Location = new System.Drawing.Point(325, 167);
             this.lblEmergencyAlternatePhone.Name = "lblEmergencyAlternatePhone";
             this.lblEmergencyAlternatePhone.Size = new System.Drawing.Size(86, 13);
             this.lblEmergencyAlternatePhone.TabIndex = 66;
@@ -911,20 +880,11 @@
             // lblEmergencyPhone
             // 
             this.lblEmergencyPhone.AutoSize = true;
-            this.lblEmergencyPhone.Location = new System.Drawing.Point(370, 162);
+            this.lblEmergencyPhone.Location = new System.Drawing.Point(370, 130);
             this.lblEmergencyPhone.Name = "lblEmergencyPhone";
             this.lblEmergencyPhone.Size = new System.Drawing.Size(41, 13);
             this.lblEmergencyPhone.TabIndex = 65;
             this.lblEmergencyPhone.Text = "Phone:";
-            // 
-            // lblEmergencyCountry
-            // 
-            this.lblEmergencyCountry.AutoSize = true;
-            this.lblEmergencyCountry.Location = new System.Drawing.Point(365, 127);
-            this.lblEmergencyCountry.Name = "lblEmergencyCountry";
-            this.lblEmergencyCountry.Size = new System.Drawing.Size(46, 13);
-            this.lblEmergencyCountry.TabIndex = 64;
-            this.lblEmergencyCountry.Text = "Country:";
             // 
             // lblEmergencyZip
             // 
@@ -1003,9 +963,8 @@
             this.lblFeedback.AutoSize = true;
             this.lblFeedback.Location = new System.Drawing.Point(85, 816);
             this.lblFeedback.Name = "lblFeedback";
-            this.lblFeedback.Size = new System.Drawing.Size(58, 13);
+            this.lblFeedback.Size = new System.Drawing.Size(0, 13);
             this.lblFeedback.TabIndex = 1;
-            this.lblFeedback.Text = "Feedback:";
             // 
             // btnAdd
             // 
@@ -1064,7 +1023,6 @@
         private System.Windows.Forms.Label lblFname;
         private System.Windows.Forms.Label lblMname;
         private System.Windows.Forms.Label lblLname;
-        private System.Windows.Forms.Label lblSocialSecurity;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label lblAddress2;
         private System.Windows.Forms.Label lblCity;
@@ -1075,7 +1033,6 @@
         private System.Windows.Forms.TextBox txtFname;
         private System.Windows.Forms.TextBox txtMname;
         private System.Windows.Forms.TextBox txtLname;
-        private System.Windows.Forms.TextBox txtSocialSecurity;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtAddress2;
         private System.Windows.Forms.TextBox txtCity;
@@ -1127,7 +1084,6 @@
         private System.Windows.Forms.Button btnCopyAddress;
         private System.Windows.Forms.TextBox txtEmergencyAlternatePhone;
         private System.Windows.Forms.TextBox txtEmergencyPhone;
-        private System.Windows.Forms.ComboBox cmbEmergencyCountry;
         private System.Windows.Forms.TextBox txtEmergencyZip;
         private System.Windows.Forms.TextBox txtEmergencyAddress2;
         private System.Windows.Forms.TextBox txtEmergencyAddress;
@@ -1137,7 +1093,6 @@
         private System.Windows.Forms.TextBox txtEmergencyFname;
         private System.Windows.Forms.Label lblEmergencyAlternatePhone;
         private System.Windows.Forms.Label lblEmergencyPhone;
-        private System.Windows.Forms.Label lblEmergencyCountry;
         private System.Windows.Forms.Label lblEmergencyZip;
         private System.Windows.Forms.Label lblEmergencyState;
         private System.Windows.Forms.Label lblEmergencyAddress2;
