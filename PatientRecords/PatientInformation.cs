@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace PatientRecords
 {
@@ -19,6 +20,74 @@ namespace PatientRecords
             //Disable Edit capabilities since they dont exist yet
             btnUpdate.Visible = false;
             btnUpdate.Enabled = false;
+        }
+
+        //OVERLOADED CONSTRUCTOR -- meant to pull up existing data
+        public PatientInformation(Int32 intPID)
+        {
+            InitializeComponent();
+
+            //Fill in the State dropdown box
+            FillStateList();
+
+            //Disable the add capability because they already exist
+            btnAdd.Visible = false;
+            btnAdd.Enabled = false;
+
+            //Gather info about this one person and store it in a datareader
+            PatientInfo temp = new PatientInfo();
+            SqlDataReader dr = temp.FindOnePatient(intPID);
+
+            //Use this info to fill out the form
+            //Loop through the records store in the reader 1 record at a time
+            //Since this is based on one person's ID we should only have one record
+            while (dr.Read())
+            {
+                //Take the Name(s) from the datareader and copy them into the appropriate text fields
+                txtFname.Text = dr["Fname"].ToString();
+                txtMname.Text = dr["Mname"].ToString();
+                txtLname.Text = dr["Lname"].ToString();
+                txtAddress.Text = dr["Address"].ToString();
+                txtAddress2.Text = dr["Address2"].ToString();
+                txtCity.Text = dr["City"].ToString();
+                cmbState.SelectedItem = dr["State"].ToString();
+                txtZip.Text = dr["Zip"].ToString();
+                txtPhone.Text = dr["Phone"].ToString();
+                txtAlternatePhone.Text = dr["AlternatePhone"].ToString();
+                txtEmail.Text = dr["Email"].ToString();
+                txtGender.Text = dr["Gender"].ToString();
+                dtpBirthdate.Value = (DateTime)dr["Birthdate"];
+                txtAge.Text = dr["Age"].ToString();
+                cmbMaritalStatus.SelectedItem = dr["MaritalStatus"].ToString();
+                txtRace.Text = dr["Race"].ToString();
+                txtEthnicity.Text = dr["Ethnicity"].ToString();
+                txtLanguage.Text = dr["Language"].ToString();
+                txtHeight.Text = dr["Height"].ToString();
+                txtWeight.Text = dr["Weight"].ToString();
+                txtPrimayCareProvider.Text = dr["PrimayCareProvider"].ToString();
+                txtInsuranceProvider.Text = dr["InsuranceProvider"].ToString();
+                cmbWorkStatus.SelectedItem = dr["WorkStatus"].ToString();
+                txtOccupation.Text = dr["Occupation"].ToString();
+                txtEmployer.Text = dr["Employer"].ToString();
+                txtEmployerPhone.Text = dr["EmployerPhone"].ToString();
+                txtSchool.Text = dr["School"].ToString();
+                txtFieldofStudy.Text = dr["FieldofStudy"].ToString();
+                txtSchoolPhone.Text = dr["SchoolPhone"].ToString();
+                txtEmergencyFname.Text = dr["EmergencyFname"].ToString();
+                txtEmergencyMname.Text = dr["EmergencyMname"].ToString();
+                txtEmergencyLname.Text = dr["EmergencyLname"].ToString();
+                cmbRelationship.SelectedItem = dr["Relationship"].ToString();
+                txtEmergencyAddress.Text = dr["EmergencyAddress"].ToString();
+                txtEmergencyAddress2.Text = dr["EmergencyAddress2"].ToString();
+                txtEmergencyCity.Text = dr["EmergencyCity"].ToString();
+                cmbEmergencyState.SelectedItem = dr["EmergencyState"].ToString();
+                txtEmergencyZip.Text = dr["EmergencyZip"].ToString();
+                txtEmergencyPhone.Text = dr["EmergencyPhone"].ToString();
+                txtEmergencyAlternatePhone.Text = dr["EmergencyAlternatePhone"].ToString();
+
+                //We add this one to store the ID in a new label on the form
+                lblPID.Text = dr["PatientID"].ToString();
+            }
         }
 
         private void PatientInformation_Load(object sender, EventArgs e)

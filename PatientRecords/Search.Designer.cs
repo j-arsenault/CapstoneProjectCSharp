@@ -30,8 +30,8 @@
         {
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtPID = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtFName = new System.Windows.Forms.TextBox();
+            this.txtLName = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.lblPatientID = new System.Windows.Forms.Label();
             this.lblOrBy = new System.Windows.Forms.Label();
@@ -49,6 +49,7 @@
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtPID
             // 
@@ -57,19 +58,19 @@
             this.txtPID.Size = new System.Drawing.Size(87, 20);
             this.txtPID.TabIndex = 1;
             // 
-            // textBox2
+            // txtFName
             // 
-            this.textBox2.Location = new System.Drawing.Point(304, 60);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 20);
-            this.textBox2.TabIndex = 2;
+            this.txtFName.Location = new System.Drawing.Point(304, 60);
+            this.txtFName.Name = "txtFName";
+            this.txtFName.Size = new System.Drawing.Size(151, 20);
+            this.txtFName.TabIndex = 2;
             // 
-            // textBox3
+            // txtLName
             // 
-            this.textBox3.Location = new System.Drawing.Point(487, 59);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(151, 20);
-            this.textBox3.TabIndex = 3;
+            this.txtLName.Location = new System.Drawing.Point(487, 59);
+            this.txtLName.Name = "txtLName";
+            this.txtLName.Size = new System.Drawing.Size(151, 20);
+            this.txtLName.TabIndex = 3;
             // 
             // lblSearch
             // 
@@ -123,6 +124,7 @@
             this.gvResults.Name = "gvResults";
             this.gvResults.Size = new System.Drawing.Size(753, 572);
             this.gvResults.TabIndex = 9;
+            this.gvResults.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvResults_CellContentDoubleClick);
             // 
             // Search
             // 
@@ -135,8 +137,8 @@
             this.Controls.Add(this.lblOrBy);
             this.Controls.Add(this.lblPatientID);
             this.Controls.Add(this.lblSearch);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtLName);
+            this.Controls.Add(this.txtFName);
             this.Controls.Add(this.txtPID);
             this.Controls.Add(this.btnSearch);
             this.Name = "Search";
@@ -151,8 +153,8 @@
 
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtPID;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtFName;
+        private System.Windows.Forms.TextBox txtLName;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.Label lblPatientID;
         private System.Windows.Forms.Label lblOrBy;
