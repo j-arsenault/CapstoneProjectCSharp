@@ -64,7 +64,7 @@ namespace PatientRecords
                 txtLanguage.Text = dr["Language"].ToString();
                 txtHeight.Text = dr["Height"].ToString();
                 txtWeight.Text = dr["Weight"].ToString();
-                txtPrimayCareProvider.Text = dr["PrimayCareProvider"].ToString();
+                txtPrimayCareProvider.Text = dr["PrimaryCareProvider"].ToString();
                 txtInsuranceProvider.Text = dr["InsuranceProvider"].ToString();
                 cmbWorkStatus.SelectedItem = dr["WorkStatus"].ToString();
                 txtOccupation.Text = dr["Occupation"].ToString();
@@ -228,6 +228,7 @@ namespace PatientRecords
             {
                 //Fill label with the patients information
                 FillLabel(Apatient);
+                lblFeedback.Text = Apatient.AddRecord();
             }
         }
 
@@ -277,6 +278,12 @@ namespace PatientRecords
             lblFeedback.Text += temp.EmergencyZip + "\n";
             lblFeedback.Text += temp.EmergencyPhone + " ";
             lblFeedback.Text += temp.EmergencyAlternatePhone + " ";
+        }
+
+        private void FillLabel()
+        {
+            //Show in the feedback label when they search an unknown patient
+            lblFeedback.Text = "Unknown Patient.... Lack of Data";
         }
 
         private void btnInsuranceInfo_Click(object sender, EventArgs e)

@@ -109,7 +109,7 @@ namespace PatientRecords
             }
         }
 
-        private int EmployeeLogin(string strUName, string strPW)
+        private int EmployeeLogin(string strUName, string strPWD)
         {
             //Declare a variable to hold the admin level
             int intAdminLevel = 0;
@@ -121,10 +121,10 @@ namespace PatientRecords
             SqlCommand comm = new SqlCommand();
 
             //Write a Select Statement to peform Search
-            string strSQL = "SELECT MyLevel FROM MyLogin WHERE (UName = @UName AND PW = @PW)";
+            string strSQL = "SELECT MyLevel FROM UserLogin WHERE (UName = @UName AND PWD = @PWD)";
             //Set parameters
             comm.Parameters.AddWithValue("@UName", strUName);
-            comm.Parameters.AddWithValue("@PW", strPW);
+            comm.Parameters.AddWithValue("@PWD", strPWD);
 
             //Create DB tools and configure
             SqlConnection conn = new SqlConnection();
