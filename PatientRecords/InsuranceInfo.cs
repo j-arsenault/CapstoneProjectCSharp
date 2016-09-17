@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace PatientRecords
 {
@@ -26,6 +27,52 @@ namespace PatientRecords
 
             //When form loads set Patient Relationship index to 0
             cmbSecondaryPatientRelationship.SelectedIndex = 0;
+
+            //Disable edit buttons
+            btnUpdate.Visible = false;
+            btnUpdate.Enabled = false;
+        }
+
+
+        //OVERLOADED CONSTRUCTOR -- meant to pull up existing data
+        public InsuranceInfo(Int32 intPID)
+        {
+            InitializeComponent();
+
+            //Fill in the Relationship dropdown box
+            FillRelationship();
+
+            //Disable the add capability because they already exist
+            btnAdd.Visible = false;
+            btnAdd.Enabled = false;
+
+            //Gather info about this one person and store it in a datareader
+            PatientInsurance temp = new PatientInsurance();
+            SqlDataReader dr = temp.FindOnePatientInsurance(intPID);
+
+            //Use this info to fill out the form
+            //Loop through the records store in the reader 1 record at a time
+            //Since this is based on one person's ID we should only have one record
+            while (dr.Read())
+            {
+                //Take the Name(s) from the datareader and copy them into the appropriate text fields
+                txtFname.Text = dr["Fname"].ToString();
+                txtMname.Text = dr["Mname"].ToString();
+                txtLname.Text = dr["Lname"].ToString();
+                txtStreet1.Text = dr["Street1"].ToString();
+                txtStreet2.Text = dr["Street2"].ToString();
+                txtCity.Text = dr["City"].ToString();
+                cmbState.SelectedItem = dr["State"].ToString();
+                txtZip.Text = dr["Zip"].ToString();
+                txtPhone.Text = dr["Phone"].ToString();
+                txtEmail.Text = dr["Email"].ToString();
+                dtpStart.Value = (DateTime)dr["StartTime"];
+                dtpEnd.Value = (DateTime)dr["EndTime"];
+                txtCmnts.Text = dr["MyComments"].ToString();
+
+                //We add this one to store the ID in a new label on the form
+                lblPID.Text = dr["App_ID"].ToString();
+            }
         }
 
         //Filling Relationship Dropdown
@@ -63,7 +110,7 @@ namespace PatientRecords
             ApatientInsurance.Copayment = txtCopayment.Text;
             ApatientInsurance.SubscriberName = txtSubscriberName.Text;
             ApatientInsurance.SocialSecNum = txtSocialSecurityNum.Text;
-            ApatientInsurance.SubscriberBirthday = dtpSubscriberBirthdate.Value;
+            ApatientInsurance.SubscriberBirthdate = dtpSubscriberBirthdate.Value;
             ApatientInsurance.PatientRelationship = cmbPatientRelationship.SelectedItem.ToString();
 
             //Secondary Insurance information --IF ANY--
@@ -73,7 +120,7 @@ namespace PatientRecords
             ApatientInsurance.SecondaryCopayment = txtSecondaryCopayment.Text;
             ApatientInsurance.SecondarySubscriberName = txtSecondarySubscriberName.Text;
             ApatientInsurance.SecondarySocialSecNum = txtSecondarySocialSecNum.Text;
-            ApatientInsurance.SecondaryBirthday = dtpSecondaryBirthdate.Value;
+            ApatientInsurance.SecondaryBirthdate = dtpSecondaryBirthdate.Value;
             ApatientInsurance.SecondaryPatientRelationship = cmbSecondaryPatientRelationship.SelectedItem.ToString();
 
             //If an error in information occurs..
@@ -86,6 +133,7 @@ namespace PatientRecords
             {
                 //Fill label with the patients information
                 FillLabel(ApatientInsurance);
+                lblFeedback.Text = ApatientInsurance.AddRecord();
             }
         }
 
@@ -99,7 +147,7 @@ namespace PatientRecords
             lblFeedback.Text += temp.Copayment + " ";
             lblFeedback.Text += temp.SubscriberName + " ";
             lblFeedback.Text += temp.SocialSecNum + " ";
-            lblFeedback.Text += temp.SubscriberBirthday + " ";
+            lblFeedback.Text += temp.SubscriberBirthdate + " ";
             lblFeedback.Text += temp.PatientRelationship + "\n";
             //Employer/School information
             lblFeedback.Text += temp.SecondaryInsurance + " ";
@@ -108,8 +156,60 @@ namespace PatientRecords
             lblFeedback.Text += temp.SecondaryCopayment + "\n";
             lblFeedback.Text += temp.SecondarySubscriberName + " ";
             lblFeedback.Text += temp.SecondarySocialSecNum + " ";
-            lblFeedback.Text += temp.SecondaryBirthday + " ";
+            lblFeedback.Text += temp.SecondaryBirthdate + " ";
             lblFeedback.Text += temp.SecondaryPatientRelationship + "\n";
+        }
+
+        private void FillLabel()
+        {
+            //Show in the feedback label when they search an unknown person
+            lblFeedback.Text = "Unknown Patient.... Lack of Data";
+        }
+
+
+        //Button click to update the record in the form
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            //Create a person so we can use the update method
+            PatientInsurance temp = new PatientInsurance();
+
+            //Fill in the data from form
+            temp.Insurance = txtInsurance.Text;
+            temp.GroupNum = txtGroupNum.Text;
+            temp.PolicyNum = txtPolicyNum.Text;
+            temp.Copayment = txtCopayment.Text;
+            temp.SubscriberName = txtSubscriberName.Text;
+            temp.SocialSecNum = txtSocialSecurityNum.Text;
+            temp.SubscriberBirthdate = dtpSubscriberBirthdate.Value;
+            temp.PatientRelationship = cmbPatientRelationship.SelectedItem.ToString();
+            temp.SecondaryInsurance = txtSecondaryInsurance.Text;
+            temp.SecondaryGroupNum = txtSecondaryGroupNum.Text;
+            temp.SecondaryPolicyNum = txtSecondaryPolicyNum.Text;
+            temp.SecondaryCopayment = txtSecondaryCopayment.Text;
+            temp.SecondarySubscriberName = txtSecondarySubscriberName.Text;
+            temp.SecondarySocialSecNum = txtSecondarySocialSecNum.Text;
+            temp.SecondaryBirthdate = dtpSecondaryBirthdate.Value;
+            temp.SecondaryPatientRelationship = cmbSecondaryPatientRelationship.SelectedItem.ToString();
+            temp.PatientID = Convert.ToInt32(lblPID.Text);
+
+            //Checking to see all validation has been met
+            // and if any ERRORS have happened
+            if (temp.Feedback.Contains("ERROR:"))
+            {
+                lblFeedback.Text = temp.Feedback;
+            }
+            else if (temp.Fname.Length > 0 && temp.Lname.Length > 0)
+            {
+                FillLabel(temp);
+                //Perform the update and store the #of records effected
+                Int32 intRecords = temp.UpdateAppointment();
+                //Display feedback to the user
+                lblFeedback.Text = intRecords.ToString() + " Records Updated.";
+            }
+            else
+            {
+                FillLabel();
+            }
         }
 
 

@@ -18,7 +18,7 @@ namespace PatientRecords
         private string copayment;
         private string subscriberName;
         private string socialSecNum;
-        private DateTime subscriberBirthday;
+        private DateTime subscriberBirthdate;
         private string patientRelationship;
         private string secondaryInsurance;
         private string secondaryGroupNum;
@@ -26,9 +26,10 @@ namespace PatientRecords
         private string secondaryCopayment;
         private string secondarySubscriberName;
         private string secondarySocialSecNum;
-        private DateTime secondaryBirthday;
+        private DateTime secondaryBirthdate;
         private string secondaryPatientRelationship;
         private string feedback;
+        public Int32 PatientID = 0;
 
 
         //These are public variables that are the front-end to the private variables.
@@ -170,10 +171,10 @@ namespace PatientRecords
             }
         }
 
-        public DateTime SubscriberBirthday
+        public DateTime SubscriberBirthdate
         {
-            get { return subscriberBirthday; }
-            set { subscriberBirthday = value; }
+            get { return subscriberBirthdate; }
+            set { subscriberBirthdate = value; }
         }
 
         public string PatientRelationship
@@ -218,10 +219,10 @@ namespace PatientRecords
             set { secondarySocialSecNum = value; }
         }
 
-        public DateTime SecondaryBirthday
+        public DateTime SecondaryBirthdate
         {
-            get { return secondaryBirthday; }
-            set { secondaryBirthday = value; }
+            get { return secondaryBirthdate; }
+            set { secondaryBirthdate = value; }
         }
 
         public string SecondaryPatientRelationship
@@ -246,7 +247,7 @@ namespace PatientRecords
             string strFeedback = "";
             
             //SQL Command to add a record to the Patient Information DB
-            string strSQL = "INSERT INTO PatientInfo (Insurance, GroupNum, PolicyNum, Copayment, SubscriberName, SocialSecNum, SubscriberBirthday, PatientRelationship, SecondaryInsurance, SecondaryGroupNum, SecondaryPolicyNum, SecondaryCopayment, SecondarySubscriberName, SecondarySocialSecNum, SecondaryBirthday, SecondaryPatientRelationship) VALUES (@Insurance, @GroupNum, @PolicyNum, @Copayment, @SubscriberName, @SocialSecNum, @SubscriberBirthday, @PatientRelationship, @SecondaryInsurance, @SecondaryGroupNum, @SecondaryPolicyNum, @SecondaryCopayment, @SecondarySubscriberName, @SecondarySocialSecNum, @SecondaryBirthday, @SecondaryPatientRelationship)";
+            string strSQL = "INSERT INTO PatientInfo (Insurance, GroupNum, PolicyNum, Copayment, SubscriberName, SocialSecNum, SubscriberBirthdate, PatientRelationship, SecondaryInsurance, SecondaryGroupNum, SecondaryPolicyNum, SecondaryCopayment, SecondarySubscriberName, SecondarySocialSecNum, SecondaryBirthdate, SecondaryPatientRelationship) VALUES (@Insurance, @GroupNum, @PolicyNum, @Copayment, @SubscriberName, @SocialSecNum, @SubscriberBirthdate, @PatientRelationship, @SecondaryInsurance, @SecondaryGroupNum, @SecondaryPolicyNum, @SecondaryCopayment, @SecondarySubscriberName, @SecondarySocialSecNum, @SecondaryBirthdate, @SecondaryPatientRelationship)";
 
             //creating database connection 
             SqlConnection conn = new SqlConnection();
@@ -267,7 +268,7 @@ namespace PatientRecords
             comm.Parameters.AddWithValue(@"Copayment", Copayment);
             comm.Parameters.AddWithValue(@"SubscriberName", SubscriberName);
             comm.Parameters.AddWithValue(@"SocialSecNum", SocialSecNum);
-            comm.Parameters.AddWithValue(@"SubscriberBirthday", SubscriberBirthday.ToString());
+            comm.Parameters.AddWithValue(@"SubscriberBirthdate", SubscriberBirthdate.ToString());
             comm.Parameters.AddWithValue(@"PatientRelationship", PatientRelationship);
             comm.Parameters.AddWithValue(@"SecondaryInsurance", SecondaryInsurance);
             comm.Parameters.AddWithValue(@"SecondaryGroupNum", SecondaryGroupNum);
@@ -275,7 +276,7 @@ namespace PatientRecords
             comm.Parameters.AddWithValue(@"SecondaryCopayment", SecondaryCopayment);
             comm.Parameters.AddWithValue(@"SecondarySubscriberName", SecondarySubscriberName);
             comm.Parameters.AddWithValue(@"SecondarySocialSecNum", SecondarySocialSecNum);
-            comm.Parameters.AddWithValue(@"SecondaryBirthday", SecondaryBirthday.ToString());
+            comm.Parameters.AddWithValue(@"SecondaryBirthdate", SecondaryBirthdate.ToString());
             comm.Parameters.AddWithValue(@"SecondaryPatientRelationship", SecondaryPatientRelationship);
             
             try
