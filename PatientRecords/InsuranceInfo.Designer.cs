@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblPatientName = new System.Windows.Forms.Label();
             this.lblPatientID = new System.Windows.Forms.Label();
             this.gbSecondary = new System.Windows.Forms.GroupBox();
             this.dtpSecondaryBirthdate = new System.Windows.Forms.DateTimePicker();
@@ -68,24 +67,14 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.lblFeedback = new System.Windows.Forms.Label();
             this.lblPID = new System.Windows.Forms.Label();
-            this.lblFname = new System.Windows.Forms.Label();
             this.gbSecondary.SuspendLayout();
             this.gbPrimary.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblPatientName
-            // 
-            this.lblPatientName.AutoSize = true;
-            this.lblPatientName.Location = new System.Drawing.Point(178, 18);
-            this.lblPatientName.Name = "lblPatientName";
-            this.lblPatientName.Size = new System.Drawing.Size(74, 13);
-            this.lblPatientName.TabIndex = 7;
-            this.lblPatientName.Text = "Patient Name:";
-            // 
             // lblPatientID
             // 
             this.lblPatientID.AutoSize = true;
-            this.lblPatientID.Location = new System.Drawing.Point(33, 18);
+            this.lblPatientID.Location = new System.Drawing.Point(32, 19);
             this.lblPatientID.Name = "lblPatientID";
             this.lblPatientID.Size = new System.Drawing.Size(57, 13);
             this.lblPatientID.TabIndex = 6;
@@ -121,49 +110,49 @@
             this.dtpSecondaryBirthdate.Location = new System.Drawing.Point(132, 184);
             this.dtpSecondaryBirthdate.Name = "dtpSecondaryBirthdate";
             this.dtpSecondaryBirthdate.Size = new System.Drawing.Size(200, 20);
-            this.dtpSecondaryBirthdate.TabIndex = 39;
+            this.dtpSecondaryBirthdate.TabIndex = 15;
             // 
             // txtSecondaryCopayment
             // 
             this.txtSecondaryCopayment.Location = new System.Drawing.Point(445, 89);
             this.txtSecondaryCopayment.Name = "txtSecondaryCopayment";
             this.txtSecondaryCopayment.Size = new System.Drawing.Size(126, 20);
-            this.txtSecondaryCopayment.TabIndex = 38;
+            this.txtSecondaryCopayment.TabIndex = 12;
             // 
             // txtSecondaryGroupNum
             // 
             this.txtSecondaryGroupNum.Location = new System.Drawing.Point(445, 47);
             this.txtSecondaryGroupNum.Name = "txtSecondaryGroupNum";
             this.txtSecondaryGroupNum.Size = new System.Drawing.Size(126, 20);
-            this.txtSecondaryGroupNum.TabIndex = 37;
+            this.txtSecondaryGroupNum.TabIndex = 10;
             // 
             // txtSecondaryPolicyNum
             // 
             this.txtSecondaryPolicyNum.Location = new System.Drawing.Point(132, 89);
             this.txtSecondaryPolicyNum.Name = "txtSecondaryPolicyNum";
             this.txtSecondaryPolicyNum.Size = new System.Drawing.Size(173, 20);
-            this.txtSecondaryPolicyNum.TabIndex = 36;
+            this.txtSecondaryPolicyNum.TabIndex = 11;
             // 
             // txtSecondarySubscriberName
             // 
             this.txtSecondarySubscriberName.Location = new System.Drawing.Point(132, 135);
             this.txtSecondarySubscriberName.Name = "txtSecondarySubscriberName";
             this.txtSecondarySubscriberName.Size = new System.Drawing.Size(200, 20);
-            this.txtSecondarySubscriberName.TabIndex = 35;
+            this.txtSecondarySubscriberName.TabIndex = 13;
             // 
             // txtSecondarySocialSecNum
             // 
             this.txtSecondarySocialSecNum.Location = new System.Drawing.Point(544, 135);
             this.txtSecondarySocialSecNum.Name = "txtSecondarySocialSecNum";
             this.txtSecondarySocialSecNum.Size = new System.Drawing.Size(126, 20);
-            this.txtSecondarySocialSecNum.TabIndex = 34;
+            this.txtSecondarySocialSecNum.TabIndex = 14;
             // 
             // txtSecondaryInsurance
             // 
             this.txtSecondaryInsurance.Location = new System.Drawing.Point(131, 47);
             this.txtSecondaryInsurance.Name = "txtSecondaryInsurance";
             this.txtSecondaryInsurance.Size = new System.Drawing.Size(174, 20);
-            this.txtSecondaryInsurance.TabIndex = 33;
+            this.txtSecondaryInsurance.TabIndex = 9;
             // 
             // cmbSecondaryPatientRelationship
             // 
@@ -172,7 +161,7 @@
             this.cmbSecondaryPatientRelationship.Location = new System.Drawing.Point(544, 184);
             this.cmbSecondaryPatientRelationship.Name = "cmbSecondaryPatientRelationship";
             this.cmbSecondaryPatientRelationship.Size = new System.Drawing.Size(121, 21);
-            this.cmbSecondaryPatientRelationship.TabIndex = 32;
+            this.cmbSecondaryPatientRelationship.TabIndex = 16;
             // 
             // lblSecondaryGroupNum
             // 
@@ -276,49 +265,49 @@
             this.dtpSubscriberBirthdate.Location = new System.Drawing.Point(132, 174);
             this.dtpSubscriberBirthdate.Name = "dtpSubscriberBirthdate";
             this.dtpSubscriberBirthdate.Size = new System.Drawing.Size(200, 20);
-            this.dtpSubscriberBirthdate.TabIndex = 23;
+            this.dtpSubscriberBirthdate.TabIndex = 7;
             // 
             // txtCopayment
             // 
             this.txtCopayment.Location = new System.Drawing.Point(445, 79);
             this.txtCopayment.Name = "txtCopayment";
             this.txtCopayment.Size = new System.Drawing.Size(126, 20);
-            this.txtCopayment.TabIndex = 22;
+            this.txtCopayment.TabIndex = 4;
             // 
             // txtGroupNum
             // 
             this.txtGroupNum.Location = new System.Drawing.Point(445, 37);
             this.txtGroupNum.Name = "txtGroupNum";
             this.txtGroupNum.Size = new System.Drawing.Size(126, 20);
-            this.txtGroupNum.TabIndex = 21;
+            this.txtGroupNum.TabIndex = 2;
             // 
             // txtPolicyNum
             // 
             this.txtPolicyNum.Location = new System.Drawing.Point(132, 79);
             this.txtPolicyNum.Name = "txtPolicyNum";
             this.txtPolicyNum.Size = new System.Drawing.Size(173, 20);
-            this.txtPolicyNum.TabIndex = 20;
+            this.txtPolicyNum.TabIndex = 3;
             // 
             // txtSubscriberName
             // 
             this.txtSubscriberName.Location = new System.Drawing.Point(132, 125);
             this.txtSubscriberName.Name = "txtSubscriberName";
             this.txtSubscriberName.Size = new System.Drawing.Size(200, 20);
-            this.txtSubscriberName.TabIndex = 19;
+            this.txtSubscriberName.TabIndex = 5;
             // 
             // txtSocialSecurityNum
             // 
             this.txtSocialSecurityNum.Location = new System.Drawing.Point(544, 125);
             this.txtSocialSecurityNum.Name = "txtSocialSecurityNum";
             this.txtSocialSecurityNum.Size = new System.Drawing.Size(126, 20);
-            this.txtSocialSecurityNum.TabIndex = 18;
+            this.txtSocialSecurityNum.TabIndex = 6;
             // 
             // txtInsurance
             // 
             this.txtInsurance.Location = new System.Drawing.Point(131, 37);
             this.txtInsurance.Name = "txtInsurance";
             this.txtInsurance.Size = new System.Drawing.Size(174, 20);
-            this.txtInsurance.TabIndex = 17;
+            this.txtInsurance.TabIndex = 1;
             // 
             // cmbPatientRelationship
             // 
@@ -327,7 +316,7 @@
             this.cmbPatientRelationship.Location = new System.Drawing.Point(544, 174);
             this.cmbPatientRelationship.Name = "cmbPatientRelationship";
             this.cmbPatientRelationship.Size = new System.Drawing.Size(126, 21);
-            this.cmbPatientRelationship.TabIndex = 15;
+            this.cmbPatientRelationship.TabIndex = 8;
             // 
             // lblGroupNumber
             // 
@@ -406,7 +395,7 @@
             this.btnAdd.Location = new System.Drawing.Point(602, 595);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(103, 23);
-            this.btnAdd.TabIndex = 8;
+            this.btnAdd.TabIndex = 17;
             this.btnAdd.Text = "Add Insurance";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -416,7 +405,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(602, 642);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(103, 23);
-            this.btnUpdate.TabIndex = 9;
+            this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "Update Insurance";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
@@ -432,30 +421,20 @@
             // lblPID
             // 
             this.lblPID.AutoSize = true;
-            this.lblPID.Location = new System.Drawing.Point(90, 18);
+            this.lblPID.Location = new System.Drawing.Point(104, 19);
             this.lblPID.Name = "lblPID";
             this.lblPID.Size = new System.Drawing.Size(0, 13);
             this.lblPID.TabIndex = 11;
-            // 
-            // lblFname
-            // 
-            this.lblFname.AutoSize = true;
-            this.lblFname.Location = new System.Drawing.Point(259, 18);
-            this.lblFname.Name = "lblFname";
-            this.lblFname.Size = new System.Drawing.Size(0, 13);
-            this.lblFname.TabIndex = 12;
             // 
             // InsuranceInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 702);
-            this.Controls.Add(this.lblFname);
             this.Controls.Add(this.lblPID);
             this.Controls.Add(this.lblFeedback);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.lblPatientName);
             this.Controls.Add(this.lblPatientID);
             this.Controls.Add(this.gbSecondary);
             this.Controls.Add(this.gbPrimary);
@@ -473,7 +452,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblPatientName;
         private System.Windows.Forms.Label lblPatientID;
         private System.Windows.Forms.GroupBox gbSecondary;
         private System.Windows.Forms.DateTimePicker dtpSecondaryBirthdate;
@@ -513,6 +491,5 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label lblFeedback;
         private System.Windows.Forms.Label lblPID;
-        private System.Windows.Forms.Label lblFname;
     }
 }
