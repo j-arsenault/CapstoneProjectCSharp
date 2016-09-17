@@ -48,15 +48,15 @@
             this.pnlControls.Controls.Add(this.btnSearch);
             this.pnlControls.Controls.Add(this.btnAddPatient);
             this.pnlControls.Enabled = false;
-            this.pnlControls.Location = new System.Drawing.Point(108, 392);
+            this.pnlControls.Location = new System.Drawing.Point(108, 356);
             this.pnlControls.Name = "pnlControls";
-            this.pnlControls.Size = new System.Drawing.Size(513, 157);
+            this.pnlControls.Size = new System.Drawing.Size(513, 50);
             this.pnlControls.TabIndex = 0;
             this.pnlControls.Visible = false;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(315, 67);
+            this.btnSearch.Location = new System.Drawing.Point(322, 18);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(102, 23);
             this.btnSearch.TabIndex = 3;
@@ -66,7 +66,7 @@
             // 
             // btnAddPatient
             // 
-            this.btnAddPatient.Location = new System.Drawing.Point(91, 67);
+            this.btnAddPatient.Location = new System.Drawing.Point(98, 18);
             this.btnAddPatient.Name = "btnAddPatient";
             this.btnAddPatient.Size = new System.Drawing.Size(108, 23);
             this.btnAddPatient.TabIndex = 2;
@@ -76,7 +76,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(230, 203);
+            this.btnLogin.Location = new System.Drawing.Point(212, 183);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 1;
@@ -115,7 +115,7 @@
             // lblFeedback
             // 
             this.lblFeedback.AutoSize = true;
-            this.lblFeedback.Location = new System.Drawing.Point(124, 142);
+            this.lblFeedback.Location = new System.Drawing.Point(158, 132);
             this.lblFeedback.Name = "lblFeedback";
             this.lblFeedback.Size = new System.Drawing.Size(0, 13);
             this.lblFeedback.TabIndex = 7;
@@ -144,14 +144,14 @@
             this.pnlLogin.Controls.Add(this.lblFeedback);
             this.pnlLogin.Location = new System.Drawing.Point(108, 114);
             this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(509, 255);
+            this.pnlLogin.Size = new System.Drawing.Size(509, 223);
             this.pnlLogin.TabIndex = 10;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 620);
+            this.ClientSize = new System.Drawing.Size(694, 443);
             this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.pnlControls);
             this.Controls.Add(this.lblHeader);

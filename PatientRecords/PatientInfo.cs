@@ -860,7 +860,7 @@ namespace PatientRecords
             comm.CommandText = strSQL; //Commander knows what to say
             comm.Connection = conn;   //Getting the connection
             
-            
+
             //Fill in the parameters (has to be created in same sequence as they are used in SQL Statement).
             comm.Parameters.AddWithValue(@"Fname", Fname);
             comm.Parameters.AddWithValue(@"Mname", Mname);
@@ -1010,5 +1010,101 @@ namespace PatientRecords
             //Return some form of feedback
             return comm.ExecuteReader(); //Return the dataset to be used by others (the calling form) 
         }
+
+
+        //Method that will update one persons record specified by the ID
+        //It will return an integer meant for feedback for how many records were updated
+        public Int32 UpdatePatient()
+        {
+            //Creating a variable to hold the integer of # of records effected
+            Int32 intRecords = 0;
+
+            //Create SQL command string
+            string strSQL = "UPDATE Patients SET Fname = @Fname, Mname = @Mname, Lname = @Lname, Address = @Address, Address2 = @Address2, City = @City, State = @State, Zip = @Zip, Phone = @Phone, AlternatePhone = @AlternatePhone, Email = @Email, Gender = @Gender, Birthdate = @Birthdate, Age = @Age, MaritalStatus = @MaritalStatus, Race = @Race, Ethnicity = @Ethnicity, Language = @Language, Height = @Height, Weight = @Weight, PrimaryCareProvider = @PrimaryCareProvider, InsuranceProvider = @InsuranceProvider, WorkStatus = @WorkStatus, Occupation = @Occupation, Employer = @Employer, EmployerPhone = @EmployerPhone, School = @School, FieldofStudy = @FieldofStudy, SchoolPhone = @SchoolPhone, EmergencyFname = @EmergencyFname, EmergencyMname = @EmergencyMname, EmergencyLname = @EmergencyLname, Relationship = @Relationship, EmergencyAddress = @EmergencyAddress, EmergencyAddress2 = @EmergencyAddress2, EmergencyCity = @EmergencyCity, EmergencyState = @EmergencyState, EmergencyZip = @EmergencyZip, EmergencyPhone = @EmergencyPhone, EmergencyAlternatePhone = @EmergencyAlternatePhone WHERE PatientID = @PatientID;";
+
+
+            //Create connection to the DB
+            SqlConnection conn = new SqlConnection();
+
+            //Connection string to the DB
+            //The Connection String being used
+            //Create the who what and where of the DB
+            string strConn = MyTools.GetConnected();
+            conn.ConnectionString = strConn;
+
+            //Bark out our command
+            SqlCommand comm = new SqlCommand();
+            comm.CommandText = strSQL;  //Commander knows what to say
+            comm.Connection = conn;  //Getting the connection
+            
+            //Fill in the parameters
+            //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            //~~~~~~~HAS TO BE IN THE SAME SEQUENCE AS THEY ARE USED IN THE SQL STATEMENT~~~~~~~~~~~~
+            //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            comm.Parameters.AddWithValue("@Fname", Fname);
+            comm.Parameters.AddWithValue("@Mname", Mname);
+            comm.Parameters.AddWithValue("@Lname", Lname);
+            comm.Parameters.AddWithValue(@"Address", Address);
+            comm.Parameters.AddWithValue(@"Address2", Address2);
+            comm.Parameters.AddWithValue(@"City", City);
+            comm.Parameters.AddWithValue(@"State", State);
+            comm.Parameters.AddWithValue(@"Zip", Zip);
+            comm.Parameters.AddWithValue(@"Phone", Phone);
+            comm.Parameters.AddWithValue(@"AlternatePhone", AlternatePhone);
+            comm.Parameters.AddWithValue(@"Email", Email);
+            comm.Parameters.AddWithValue(@"Gender", Gender);
+            comm.Parameters.AddWithValue(@"Birthdate", Birthdate.ToString());
+            comm.Parameters.AddWithValue(@"Age", Age);
+            comm.Parameters.AddWithValue(@"MaritalStatus", MaritalStatus);
+            comm.Parameters.AddWithValue(@"Race", Race);
+            comm.Parameters.AddWithValue(@"Ethnicity", Ethnicity);
+            comm.Parameters.AddWithValue(@"Language", Language);
+            comm.Parameters.AddWithValue(@"Height", Height);
+            comm.Parameters.AddWithValue(@"Weight", Weight);
+            comm.Parameters.AddWithValue(@"PrimaryCareProvider", PrimaryCareProvider);
+            comm.Parameters.AddWithValue(@"InsuranceProvider", InsuranceProvider);
+            comm.Parameters.AddWithValue(@"WorkStatus", WorkStatus);
+            comm.Parameters.AddWithValue(@"Occupation", Occupation);
+            comm.Parameters.AddWithValue(@"Employer", Employer);
+            comm.Parameters.AddWithValue(@"EmployerPhone", EmployerPhone);
+            comm.Parameters.AddWithValue(@"School", School);
+            comm.Parameters.AddWithValue(@"FieldofStudy", FieldofStudy);
+            comm.Parameters.AddWithValue(@"SchoolPhone", SchoolPhone);
+            comm.Parameters.AddWithValue(@"EmergencyFname", EmergencyFname);
+            comm.Parameters.AddWithValue(@"EmergencyMname", EmergencyMname);
+            comm.Parameters.AddWithValue(@"EmergencyLname", EmergencyLname);
+            comm.Parameters.AddWithValue(@"Relationship", Relationship);
+            comm.Parameters.AddWithValue(@"EmergencyAddress", EmergencyAddress);
+            comm.Parameters.AddWithValue(@"EmergencyAddress2", EmergencyAddress2);
+            comm.Parameters.AddWithValue(@"EmergencyCity", EmergencyCity);
+            comm.Parameters.AddWithValue(@"EmergencyState", EmergencyState);
+            comm.Parameters.AddWithValue(@"EmergencyZip", EmergencyZip);
+            comm.Parameters.AddWithValue(@"EmergencyPhone", EmergencyPhone);
+            comm.Parameters.AddWithValue(@"EmergencyAlternatePhone", EmergencyAlternatePhone);
+            comm.Parameters.AddWithValue("@PatientID", PatientID);
+
+            try
+            {
+                //Open the DB connection
+                conn.Open();
+
+                //Run the update and store number of records effected
+                intRecords = comm.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+            }
+            finally
+            {
+                //Close the DB connection
+                conn.Close();
+            }
+
+
+            //Return # of records updated.
+            return intRecords;
+
+        }
+
     }
 }

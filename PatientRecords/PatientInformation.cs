@@ -17,6 +17,31 @@ namespace PatientRecords
         {
             InitializeComponent();
 
+            //When Form loads fill the state dropdown
+            FillStateList();
+            //When form loads set State index to 0
+            cmbState.SelectedIndex = 0;
+
+            //When form loads fill the marital status drop down
+            FillMaritalStatus();
+            //When form loads set Marital Status index to 0
+            cmbMaritalStatus.SelectedIndex = 0;
+
+            //When form loads fill work status drop down
+            FillWorkStatus();
+            //When Form Loads set Work Status index to 0
+            cmbWorkStatus.SelectedIndex = 0;
+
+            //When form loads fill Relationship drop down
+            FillRelationship();
+            //When form loads set Relationship index to 0
+            cmbRelationship.SelectedIndex = 0;
+
+            //When form loads fill Emergency State
+            FillEmergencyState();
+            //When form loads set the Emergency State index to 0
+            cmbEmergencyState.SelectedIndex = 0;
+
             //Disable Edit capabilities since they dont exist yet
             btnUpdate.Visible = false;
             btnUpdate.Enabled = false;
@@ -29,6 +54,18 @@ namespace PatientRecords
 
             //Fill in the State dropdown box
             FillStateList();
+
+            //Fill in the Marital Status dropdown box
+            FillMaritalStatus();
+
+            //Fill in the Work Status dropdown box
+            FillWorkStatus();
+
+            //Fill in the Relationship dropdown box
+            FillRelationship();
+
+            //Fill in the Relationship dropdown box
+            FillEmergencyState();
 
             //Disable the add capability because they already exist
             btnAdd.Visible = false;
@@ -92,30 +129,30 @@ namespace PatientRecords
 
         private void PatientInformation_Load(object sender, EventArgs e)
         {
-            //When Form loads fill the state dropdown
-            FillStateList();
-            //When form loads set State index to 0
-            cmbState.SelectedIndex = 0;
+            ////When Form loads fill the state dropdown
+            //FillStateList();
+            ////When form loads set State index to 0
+            //cmbState.SelectedIndex = 0;
 
-            //When form loads fill the marital status drop down
-            FillMaritalStatus();
-            //When form loads set Marital Status index to 0
-            cmbMaritalStatus.SelectedIndex = 0;
+            ////When form loads fill the marital status drop down
+            //FillMaritalStatus();
+            ////When form loads set Marital Status index to 0
+            //cmbMaritalStatus.SelectedIndex = 0;
 
-            //When form loads fill work status drop down
-            FillWorkStatus();
-            //When Form Loads set Work Status index to 0
-            cmbWorkStatus.SelectedIndex = 0;
+            ////When form loads fill work status drop down
+            //FillWorkStatus();
+            ////When Form Loads set Work Status index to 0
+            //cmbWorkStatus.SelectedIndex = 0;
 
-            //When form loads fill Relationship drop down
-            FillRelationship();
-            //When form loads set Relationship index to 0
-            cmbRelationship.SelectedIndex = 0;
+            ////When form loads fill Relationship drop down
+            //FillRelationship();
+            ////When form loads set Relationship index to 0
+            //cmbRelationship.SelectedIndex = 0;
 
-            //When form loads fill Emergency State
-            FillEmergencyState();
-            //When form loads set the Emergency State index to 0
-            cmbEmergencyState.SelectedIndex = 0;
+            ////When form loads fill Emergency State
+            //FillEmergencyState();
+            ////When form loads set the Emergency State index to 0
+            //cmbEmergencyState.SelectedIndex = 0;
         }
 
         //Filling State Dropdown
@@ -302,6 +339,78 @@ namespace PatientRecords
             //ShowDialog makes it so that they can't click outside the form while it is open
             //You need to close the form in order to be able to open up another one, or click on another form.
             temp.ShowDialog();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            //Create a person so we can use the update method
+            PatientInfo temp = new PatientInfo();
+
+            //Fill in the data from form
+            //Filling in information from the form
+            //Patient Demographics
+            temp.Fname = txtFname.Text;
+            temp.Mname = txtMname.Text;
+            temp.Lname = txtLname.Text;
+            temp.Address = txtAddress.Text;
+            temp.Address2 = txtAddress2.Text;
+            temp.City = txtCity.Text;
+            temp.State = cmbState.SelectedItem.ToString();
+            temp.Zip = txtZip.Text;
+            temp.Phone = txtPhone.Text;
+            temp.AlternatePhone = txtAlternatePhone.Text;
+            temp.Email = txtEmail.Text;
+            temp.Gender = txtGender.Text;
+            temp.Birthdate = dtpBirthdate.Value;
+            temp.Age = txtAge.Text;
+            temp.MaritalStatus = cmbMaritalStatus.SelectedItem.ToString();
+            temp.Race = txtRace.Text;
+            temp.Ethnicity = txtEthnicity.Text;
+            temp.Language = txtLanguage.Text;
+            temp.Height = txtHeight.Text;
+            temp.Weight = txtWeight.Text;
+            temp.PrimaryCareProvider = txtPrimayCareProvider.Text;
+            temp.InsuranceProvider = txtInsuranceProvider.Text;
+            //Emplyoment/School Information
+            temp.WorkStatus = cmbWorkStatus.SelectedItem.ToString();
+            temp.Occupation = txtOccupation.Text;
+            temp.Employer = txtEmployer.Text;
+            temp.EmployerPhone = txtEmployerPhone.Text;
+            temp.School = txtSchool.Text;
+            temp.FieldofStudy = txtFieldofStudy.Text;
+            temp.SchoolPhone = txtSchoolPhone.Text;
+            //Emergency Contact Information
+            temp.EmergencyFname = txtEmergencyFname.Text;
+            temp.EmergencyMname = txtEmergencyMname.Text;
+            temp.EmergencyLname = txtEmergencyLname.Text;
+            temp.Relationship = cmbRelationship.SelectedItem.ToString();
+            temp.EmergencyAddress = txtEmergencyAddress.Text;
+            temp.EmergencyAddress2 = txtEmergencyAddress2.Text;
+            temp.EmergencyCity = txtEmergencyCity.Text;
+            temp.EmergencyState = cmbEmergencyState.SelectedItem.ToString();
+            temp.EmergencyZip = txtEmergencyZip.Text;
+            temp.EmergencyPhone = txtEmergencyPhone.Text;
+            temp.EmergencyAlternatePhone = txtEmergencyAlternatePhone.Text;
+            temp.PatientID = Convert.ToInt32(lblPID.Text);
+
+            //Checking to see all validation has been met
+            // and if any ERRORS have happened
+            if (temp.Feedback.Contains("ERROR:"))
+            {
+                lblFeedback.Text = temp.Feedback;
+            }
+            else if (temp.Fname.Length > 0 && temp.Lname.Length > 0)
+            {
+                FillLabel(temp);
+                //Perform the update and store the #of records effected
+                Int32 intRecords = temp.UpdatePatient();
+                //Display feedback to the user
+                lblFeedback.Text = intRecords.ToString() + " Records Updated.";
+            }
+            else
+            {
+                FillLabel();
+            }
         }
     }
 }

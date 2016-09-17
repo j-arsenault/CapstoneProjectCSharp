@@ -984,6 +984,7 @@
             this.btnUpdate.TabIndex = 42;
             this.btnUpdate.Text = "Update Patient";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // PatientInformation
             // 
