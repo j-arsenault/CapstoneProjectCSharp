@@ -1,7 +1,7 @@
 # CapstoneProjectCSharp
 Capstone Project Repository -- C Sharp 
 
-![Statys](https://img.shields.io/badge/Complete-15%25-orange.svg) [![CircleCI](https://img.shields.io/circleci/project/BrightFlair/PHP.Gt.svg?maxAge=2592000?style=flat-square)]()
+![Statys](https://img.shields.io/badge/Complete-60%25-orange.svg) [![CircleCI](https://img.shields.io/circleci/project/BrightFlair/PHP.Gt.svg?maxAge=2592000?style=flat-square)]()
 ![Statys](https://img.shields.io/badge/Team Members-Ian + Jameson-red.svg)
 ![Statys](https://img.shields.io/badge/Frameworks-Metro UI Modern Metro Framework-blue.svg)
 
@@ -16,24 +16,25 @@ Documentation Site:
 * Login form
  - [x] Build Login Form
  - [x] Working Hardcoded Login
- - Database Driven Login <--- STILL NEED TO DO WHEN EVERYTHING IS READY TO GO TO THE DATABASE
+ - [x] Database Driven Login <--- STILL NEED TO DO WHEN EVERYTHING IS READY TO GO TO THE DATABASE
  - [x] Username/Password
  - [x] Error message/Acceptance message when logging in
  - [x] Once logged in, Add/Search buttons appear
  
 * Search Form
  - [x] Build Search Form
- - Ability to search Patients via ID or First/Last Name
- - Ability to double click a patient and open up their Patient Demographic form
+ - [x] Ability to search Patients via First/Last Name
+ - Ability to search Patients via Patient ID
+ - [x] Ability to double click a patient and open up their Patient Demographic form
  
 * Patient Demographics Form
  - [x] Build Patient Demographics Form
  - [x] Created PatientInfo Class to house the private variables
- - Click add button and all info prints to feedback label
- - Ability to add/update patient records
- - Record all patient data
- - Ability to click Medical History button and be brought to the Medical History Form
- - Ability to click "Click For Details" under Insurance Provider and be brought to the Insurance Form
+ - [x] Click add button and all info prints to feedback label
+ - [x] Ability to add/update patient records
+ - [x] Record all patient data
+ - [x] Ability to click Medical History button and be brought to the Medical History Form
+ - [x] Ability to click "Click For Details" under Insurance Provider and be brought to the Insurance Form
  - Ability to copy patients Address information into the "Emergency Contact" Address information sections
 
 * Insurance form
@@ -54,7 +55,7 @@ Documentation Site:
  - [x] Add to project
  - Add any new validations that are needed
 * ProtechTools Class
- - Create DB string that connects to the Database
+ - [x] Create DB string that connects to the Database
 
 ##Developer Team
  * Ian & Jameson
