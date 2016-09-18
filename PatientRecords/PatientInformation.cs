@@ -325,20 +325,20 @@ namespace PatientRecords
 
         private void btnInsuranceInfo_Click(object sender, EventArgs e)
         {
-            if(Convert.ToInt32(lblPID.Text) != 0)
+            if(lblPID.Text == "")
             {
-                int intPID = Convert.ToInt32(lblPID.Text);
                 //Creating a new instance of Patient Information form
-                InsuranceInfo temp = new InsuranceInfo(intPID);
+                InsuranceInfo temp = new InsuranceInfo();
 
                 //ShowDialog makes it so that they can't click outside the form while it is open
                 //You need to close the form in order to be able to open up another one, or click on another form.
                 temp.ShowDialog();
             }
-            else
+            else if (Convert.ToInt32(lblPID.Text) != 0)
             {
+                int intPID = Convert.ToInt32(lblPID.Text);
                 //Creating a new instance of Patient Information form
-                InsuranceInfo temp = new InsuranceInfo();
+                InsuranceInfo temp = new InsuranceInfo(intPID);
 
                 //ShowDialog makes it so that they can't click outside the form while it is open
                 //You need to close the form in order to be able to open up another one, or click on another form.

@@ -30,7 +30,7 @@ namespace PatientRecords
         private string secondaryPatientRelationship;
         private string feedback;
         public Int32 PatientID = 0;
-
+        public Int32 InsuranceID = 0;
 
         //These are public variables that are the front-end to the private variables.
         //They protect the private variables from getting bogus information, or giving out data to the wrong person
@@ -328,24 +328,24 @@ namespace PatientRecords
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             //~~~~~~~HAS TO BE IN THE SAME SEQUENCE AS THEY ARE USED IN THE SQL STATEMENT~~~~~~~~~~~~
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            //comm.Parameters.AddWithValue("@Insurance", Insurance);
-            //comm.Parameters.AddWithValue("@GroupNum", GroupNum);
-            //comm.Parameters.AddWithValue("@PolicyNum", PolicyNum);
-            //comm.Parameters.AddWithValue(@"Copayment", Copayment);
-            //comm.Parameters.AddWithValue(@"SubscriberName", SubscriberName);
-            //comm.Parameters.AddWithValue(@"SubscriberBirthdate", SubscriberBirthdate.ToString());
-            //comm.Parameters.AddWithValue(@"SubscriberSocialSecNum", SubscriberSocialSecNum);
-            //comm.Parameters.AddWithValue(@"PatientRelationship", PatientRelationship);
-            //comm.Parameters.AddWithValue(@"SecondaryInsurance", SecondaryInsurance);
-            //comm.Parameters.AddWithValue(@"SecondaryGroupNum", SecondaryGroupNum);
-            //comm.Parameters.AddWithValue(@"SecondaryPolicyNum", SecondaryPolicyNum);
-            //comm.Parameters.AddWithValue(@"SecondaryCopayment", SecondaryCopayment);
-            //comm.Parameters.AddWithValue(@"SecondarySubscriberName", SecondarySubscriberName);
-            //comm.Parameters.AddWithValue(@"SecondaryBirthdate", SecondaryBirthdate.ToString());
-            //comm.Parameters.AddWithValue(@"SecondarySocialSecNum", SecondarySocialSecNum);
-            //comm.Parameters.AddWithValue(@"SecondaryPatientRelationship", SecondaryPatientRelationship);
-            //comm.Parameters.AddWithValue("@PatientID", PatientID);
-            //comm.Parameters.AddWithValue(@"InsuranceID", InsuranceID);
+            comm.Parameters.AddWithValue("@Insurance", Insurance);
+            comm.Parameters.AddWithValue("@GroupNum", GroupNum);
+            comm.Parameters.AddWithValue("@PolicyNum", PolicyNum);
+            comm.Parameters.AddWithValue(@"Copayment", Copayment);
+            comm.Parameters.AddWithValue(@"SubscriberName", SubscriberName);
+            comm.Parameters.AddWithValue(@"SubscriberBirthdate", SubscriberBirthdate.ToString());
+            comm.Parameters.AddWithValue(@"SubscriberSocialSecNum", SubscriberSocialSecNum);
+            comm.Parameters.AddWithValue(@"PatientRelationship", PatientRelationship);
+            comm.Parameters.AddWithValue(@"SecondaryInsurance", SecondaryInsurance);
+            comm.Parameters.AddWithValue(@"SecondaryGroupNum", SecondaryGroupNum);
+            comm.Parameters.AddWithValue(@"SecondaryPolicyNum", SecondaryPolicyNum);
+            comm.Parameters.AddWithValue(@"SecondaryCopayment", SecondaryCopayment);
+            comm.Parameters.AddWithValue(@"SecondarySubscriberName", SecondarySubscriberName);
+            comm.Parameters.AddWithValue(@"SecondarySubscriberBirthdate", SecondarySubscriberBirthdate.ToString());
+            comm.Parameters.AddWithValue(@"SecondarySocialSecNum", SecondarySocialSecNum);
+            comm.Parameters.AddWithValue(@"SecondaryPatientRelationship", SecondaryPatientRelationship);
+            comm.Parameters.AddWithValue("@PatientID", PatientID);
+            comm.Parameters.AddWithValue(@"InsuranceID", InsuranceID);
 
             try
             {
