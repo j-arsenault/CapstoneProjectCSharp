@@ -299,5 +299,105 @@ namespace PatientRecords
             return strFeedback;
         }
 
+
+        //Method that will update one persons record specified by the ID
+        //It will return an integer meant for feedback for how many records were updated
+        public Int32 UpdatePatientInfo()
+        {
+            //Creating a variable to hold the integer of # of records effected
+            Int32 intRecords = 0;
+
+            //SQL Command to add a record to the Patient Information DB
+            //string strSQL = "INSERT INTO PatientInfo (Insurance, GroupNum, PolicyNum, Copayment, SubscriberName, SocialSecNum, SubscriberBirthdate, PatientRelationship, SecondaryInsurance, SecondaryGroupNum, SecondaryPolicyNum, SecondaryCopayment, SecondarySubscriberName, SecondarySocialSecNum, SecondaryBirthdate, SecondaryPatientRelationship) VALUES (@Insurance, @GroupNum, @PolicyNum, @Copayment, @SubscriberName, @SocialSecNum, @SubscriberBirthdate, @PatientRelationship, @SecondaryInsurance, @SecondaryGroupNum, @SecondaryPolicyNum, @SecondaryCopayment, @SecondarySubscriberName, @SecondarySocialSecNum, @SecondaryBirthdate, @SecondaryPatientRelationship)";
+
+
+            //Create SQL command string
+            string strSQL = "UPDATE PatientInfo SET Fname = @Fname, Mname = @Mname, Lname = @Lname, Phone = @Phone, Email = @Email, Street1 = @Street1, Street2 = @Street2, City = @City, State = @State, Zip = @Zip, StartTime = @StartTime, EndTime = @EndTime, MyComments = @MyComments WHERE App_ID = @App_ID;";
+
+            //Create connection to the DB
+            SqlConnection conn = new SqlConnection();
+
+            //Connection string to the DB
+            //The Connection String being used
+            //Create the who what and where of the DB
+            string strConn = MyTools.GetConnected();
+            conn.ConnectionString = strConn;
+
+            //Bark out our command
+            SqlCommand comm = new SqlCommand();
+            comm.CommandText = strSQL;  //Commander knows what to say
+            comm.Connection = conn;  //Getting the connection
+
+            //Fill in the parameters
+            //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            //~~~~~~~HAS TO BE IN THE SAME SEQUENCE AS THEY ARE USED IN THE SQL STATEMENT~~~~~~~~~~~~
+            //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            //comm.Parameters.AddWithValue("@Fname", Fname);
+            //comm.Parameters.AddWithValue("@Mname", Mname);
+            //comm.Parameters.AddWithValue("@Lname", Lname);
+            //comm.Parameters.AddWithValue(@"Phone", Phone);
+            //comm.Parameters.AddWithValue(@"Email", Email);
+            //comm.Parameters.AddWithValue(@"Street1", Street1);
+            //comm.Parameters.AddWithValue(@"Street2", Street2);
+            //comm.Parameters.AddWithValue(@"City", City);
+            //comm.Parameters.AddWithValue(@"State", State);
+            //comm.Parameters.AddWithValue(@"Zip", Zip);
+            //comm.Parameters.AddWithValue(@"StartTime", StartTime.ToString());
+            //comm.Parameters.AddWithValue(@"EndTime", EndTime.ToString());
+            //comm.Parameters.AddWithValue(@"MyComments", MyComments);
+            //comm.Parameters.AddWithValue("@App_ID", App_ID);
+
+            try
+            {
+                //Open the DB connection
+                conn.Open();
+
+                //Run the update and store number of records effected
+                intRecords = comm.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+            }
+            finally
+            {
+                //Close the DB connection
+                conn.Close();
+            }
+
+
+            //Return # of records updated.
+            return intRecords;
+
+        }
+
+        
+        public SqlDataReader FindOnePatientInsurance(int intPID)
+        {
+            //Create and Initialize the DB tools we need to use
+            SqlConnection conn = new SqlConnection();
+            SqlCommand comm = new SqlCommand();
+
+            //The Connection String being used
+            //Create the who what and where of the DB
+            string strConn = MyTools.GetConnected();
+
+            //The SQL Command string to pull up one person's data
+            string strSQL = "SELECT InsuranceID, PatientID, Insurance, GroupNum, PolicyNum, Copayment, SubscriberName, SocialSecNum, SubscriberBirthdate, PatientRelationship, SecondaryInsurance, SecondaryGroupNum, SecondaryPolicyNum, SecondaryCopayment, SecondarySubscriberName, SecondarySocialSecNum, SecondaryBirthdate, SecondaryPatientRelationship FROM PatientInfo WHERE PatientID = @PatientID;";
+
+            //Tell the connection object the who, what, where, how
+            conn.ConnectionString = strConn;
+
+            //Give the command object info it needs
+            comm.Connection = conn;
+            comm.CommandText = strSQL;
+            comm.Parameters.AddWithValue("@PatientID", intPID);
+
+            //Open the DataBase Connection and Yell our SQL command
+            conn.Open();
+
+            //Return some form of feedback
+            return comm.ExecuteReader(); //Return the dataset to be used by others (the calling form) 
+        }
+        
     }
 }

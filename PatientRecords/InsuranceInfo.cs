@@ -56,22 +56,27 @@ namespace PatientRecords
             while (dr.Read())
             {
                 //Take the Name(s) from the datareader and copy them into the appropriate text fields
-                txtFname.Text = dr["Fname"].ToString();
-                txtMname.Text = dr["Mname"].ToString();
-                txtLname.Text = dr["Lname"].ToString();
-                txtStreet1.Text = dr["Street1"].ToString();
-                txtStreet2.Text = dr["Street2"].ToString();
-                txtCity.Text = dr["City"].ToString();
-                cmbState.SelectedItem = dr["State"].ToString();
-                txtZip.Text = dr["Zip"].ToString();
-                txtPhone.Text = dr["Phone"].ToString();
-                txtEmail.Text = dr["Email"].ToString();
-                dtpStart.Value = (DateTime)dr["StartTime"];
-                dtpEnd.Value = (DateTime)dr["EndTime"];
-                txtCmnts.Text = dr["MyComments"].ToString();
+                txtInsurance.Text = dr["Insurance"].ToString();
+                txtGroupNum.Text = dr["GroupNum"].ToString();
+                txtPolicyNum.Text = dr["PolicyNum"].ToString();
+                txtCopayment.Text = dr["Copayment"].ToString();
+                txtSubscriberName.Text = dr["SubscriberName"].ToString();
+                txtSocialSecurityNum.Text = dr["SocialSecurityNum"].ToString();
+                dtpSubscriberBirthdate.Value = (DateTime)dr["SubscriberBirthdate"];
+                cmbPatientRelationship.SelectedItem = dr["PatientRelationship"].ToString();
+
+
+                txtSecondaryInsurance.Text = dr["SecondaryInsurance"].ToString();
+                txtSecondaryGroupNum.Text = dr["SecondaryGroupNum"].ToString();
+                txtSecondaryPolicyNum.Text = dr["SecondaryPolicyNum"].ToString();
+                txtSecondaryCopayment.Text = dr["SecondaryCopayment"].ToString();
+                txtSecondarySubscriberName.Text = dr["SecondarySubscriberName"].ToString();
+                txtSecondarySocialSecNum.Text = dr["SecondarySocialSecNum"].ToString();
+                dtpSecondaryBirthdate.Value = (DateTime)dr["SecondaryBirthdate"];
+                cmbSecondaryPatientRelationship.SelectedItem = dr["SecondaryPatientRelationship"].ToString();
 
                 //We add this one to store the ID in a new label on the form
-                lblPID.Text = dr["App_ID"].ToString();
+                lblPID.Text = dr["PatientID"].ToString();
             }
         }
 
@@ -102,6 +107,8 @@ namespace PatientRecords
 
             //Creating a new Patient Insurance instance (blank)
             PatientInsurance ApatientInsurance = new PatientInsurance();
+
+            //ApatientInsurance.PatientID = ;
 
             //Filling in information from the form
             ApatientInsurance.Insurance = txtInsurance.Text;
@@ -198,11 +205,11 @@ namespace PatientRecords
             {
                 lblFeedback.Text = temp.Feedback;
             }
-            else if (temp.Fname.Length > 0 && temp.Lname.Length > 0)
+            else if (temp.Insurance.Length > 0)
             {
                 FillLabel(temp);
                 //Perform the update and store the #of records effected
-                Int32 intRecords = temp.UpdateAppointment();
+                Int32 intRecords = temp.UpdatePatientInfo();
                 //Display feedback to the user
                 lblFeedback.Text = intRecords.ToString() + " Records Updated.";
             }
