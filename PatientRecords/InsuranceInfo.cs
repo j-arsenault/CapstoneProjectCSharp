@@ -25,6 +25,8 @@ namespace PatientRecords
             //When form loads set Patient Relationship index to 0
             cmbPatientRelationship.SelectedIndex = 0;
 
+            //When form loads fill Relationship drop downs
+            FillSecondaryRelationship();
             //When form loads set Patient Relationship index to 0
             cmbSecondaryPatientRelationship.SelectedIndex = 0;
 
@@ -41,6 +43,9 @@ namespace PatientRecords
 
             //Fill in the Relationship dropdown box
             FillRelationship();
+
+            //When form loads fill Relationship drop downs
+            FillSecondaryRelationship();
 
             //Disable the add capability because they already exist
             btnAdd.Visible = false;
@@ -90,7 +95,11 @@ namespace PatientRecords
             cmbPatientRelationship.Items.Add("Friend");
             cmbPatientRelationship.Items.Add("Significant Other");
             cmbPatientRelationship.Items.Insert(0, "Please Choose One");
+        }
 
+        //Filling Relationship Dropdown
+        public void FillSecondaryRelationship()
+        {
             //Secondary Insurance Patient Relationship drop down options
             cmbSecondaryPatientRelationship.Items.Add("Self");
             cmbSecondaryPatientRelationship.Items.Add("Parent");
