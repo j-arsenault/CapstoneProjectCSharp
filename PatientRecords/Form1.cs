@@ -22,6 +22,8 @@ namespace PatientRecords
         public Form1()
         {
             InitializeComponent();
+            //Hides password in the password textbox
+            txtPwd.PasswordChar = '*';
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
