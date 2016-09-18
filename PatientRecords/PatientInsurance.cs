@@ -307,12 +307,8 @@ namespace PatientRecords
             //Creating a variable to hold the integer of # of records effected
             Int32 intRecords = 0;
 
-            //SQL Command to add a record to the Patient Information DB
-            //string strSQL = "INSERT INTO PatientInfo (Insurance, GroupNum, PolicyNum, Copayment, SubscriberName, SocialSecNum, SubscriberBirthdate, PatientRelationship, SecondaryInsurance, SecondaryGroupNum, SecondaryPolicyNum, SecondaryCopayment, SecondarySubscriberName, SecondarySocialSecNum, SecondaryBirthdate, SecondaryPatientRelationship) VALUES (@Insurance, @GroupNum, @PolicyNum, @Copayment, @SubscriberName, @SocialSecNum, @SubscriberBirthdate, @PatientRelationship, @SecondaryInsurance, @SecondaryGroupNum, @SecondaryPolicyNum, @SecondaryCopayment, @SecondarySubscriberName, @SecondarySocialSecNum, @SecondaryBirthdate, @SecondaryPatientRelationship)";
-
-
             //Create SQL command string
-            string strSQL = "UPDATE PatientInfo SET Fname = @Fname, Mname = @Mname, Lname = @Lname, Phone = @Phone, Email = @Email, Street1 = @Street1, Street2 = @Street2, City = @City, State = @State, Zip = @Zip, StartTime = @StartTime, EndTime = @EndTime, MyComments = @MyComments WHERE App_ID = @App_ID;";
+            string strSQL = "UPDATE PatientInfo SET Insurance = @Insurance, GroupNum = @GroupNum, PolicyNum = @PolicyNum, Copayment = @Copayment, SubscriberName = @SubscriberName, SocialSecNum = @SocialSecNum, SubscriberBirthdate = @SubscriberBirthdate, PatientRelationship = @PatientRelationship, SecondaryInsurance = @SecondaryInsurance, SecondaryGroupNum = @SecondaryGroupNum, SecondaryPolicyNum = @SecondaryPolicyNum, SecondaryCopayment = @SecondaryCopayment, SecondarySubscriberName = @SecondarySubscriberName, SecondarySocialSecNum = @SecondarySocialSecNum, SecondaryBirthdate = @SecondaryBirthdate, SecondaryPatientRelationship = @SecondaryPatientRelationship WHERE InsuranceID = @InsuranceID;";
 
             //Create connection to the DB
             SqlConnection conn = new SqlConnection();
@@ -332,20 +328,23 @@ namespace PatientRecords
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             //~~~~~~~HAS TO BE IN THE SAME SEQUENCE AS THEY ARE USED IN THE SQL STATEMENT~~~~~~~~~~~~
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            //comm.Parameters.AddWithValue("@Fname", Fname);
-            //comm.Parameters.AddWithValue("@Mname", Mname);
-            //comm.Parameters.AddWithValue("@Lname", Lname);
-            //comm.Parameters.AddWithValue(@"Phone", Phone);
-            //comm.Parameters.AddWithValue(@"Email", Email);
-            //comm.Parameters.AddWithValue(@"Street1", Street1);
-            //comm.Parameters.AddWithValue(@"Street2", Street2);
-            //comm.Parameters.AddWithValue(@"City", City);
-            //comm.Parameters.AddWithValue(@"State", State);
-            //comm.Parameters.AddWithValue(@"Zip", Zip);
-            //comm.Parameters.AddWithValue(@"StartTime", StartTime.ToString());
-            //comm.Parameters.AddWithValue(@"EndTime", EndTime.ToString());
-            //comm.Parameters.AddWithValue(@"MyComments", MyComments);
-            //comm.Parameters.AddWithValue("@App_ID", App_ID);
+            //comm.Parameters.AddWithValue("@Insurance", Insurance);
+            //comm.Parameters.AddWithValue("@GroupNum", GroupNum);
+            //comm.Parameters.AddWithValue("@PolicyNum", PolicyNum);
+            //comm.Parameters.AddWithValue(@"Copayment", Copayment);
+            //comm.Parameters.AddWithValue(@"SubscriberName", SubscriberName);
+            //comm.Parameters.AddWithValue(@"SocialSecNum", SocialSecNum);
+            //comm.Parameters.AddWithValue(@"SubscriberBirthdate", SubscriberBirthdate.ToString());
+            //comm.Parameters.AddWithValue(@"PatientRelationship", PatientRelationship);
+            //comm.Parameters.AddWithValue(@"SecondaryInsurance", SecondaryInsurance);
+            //comm.Parameters.AddWithValue(@"SecondaryGroupNum", SecondaryGroupNum);
+            //comm.Parameters.AddWithValue(@"SecondaryPolicyNum", SecondaryPolicyNum);
+            //comm.Parameters.AddWithValue(@"SecondaryCopayment", SecondaryCopayment);
+            //comm.Parameters.AddWithValue(@"SecondarySubscriberName", SecondarySubscriberName);
+            //comm.Parameters.AddWithValue(@"SecondarySocialSecNum", SecondarySocialSecNum);
+            //comm.Parameters.AddWithValue(@"SecondaryBirthdate", SecondaryBirthdate.ToString());
+            //comm.Parameters.AddWithValue(@"SecondaryPatientRelationship", SecondaryPatientRelationship);
+            //comm.Parameters.AddWithValue("@PatientID", PatientID);
 
             try
             {
