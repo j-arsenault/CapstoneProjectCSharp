@@ -30,7 +30,7 @@
         {
             this.lblPatientID = new System.Windows.Forms.Label();
             this.gbSecondary = new System.Windows.Forms.GroupBox();
-            this.dtpSecondaryBirthdate = new System.Windows.Forms.DateTimePicker();
+            this.dtpSecondarySubscriberBirthdate = new System.Windows.Forms.DateTimePicker();
             this.txtSecondaryCopayment = new System.Windows.Forms.TextBox();
             this.txtSecondaryGroupNum = new System.Windows.Forms.TextBox();
             this.txtSecondaryPolicyNum = new System.Windows.Forms.TextBox();
@@ -52,7 +52,7 @@
             this.txtGroupNum = new System.Windows.Forms.TextBox();
             this.txtPolicyNum = new System.Windows.Forms.TextBox();
             this.txtSubscriberName = new System.Windows.Forms.TextBox();
-            this.txtSocialSecurityNum = new System.Windows.Forms.TextBox();
+            this.txtSubscriberSocialSecurityNum = new System.Windows.Forms.TextBox();
             this.txtInsurance = new System.Windows.Forms.TextBox();
             this.cmbPatientRelationship = new System.Windows.Forms.ComboBox();
             this.lblGroupNumber = new System.Windows.Forms.Label();
@@ -82,7 +82,7 @@
             // 
             // gbSecondary
             // 
-            this.gbSecondary.Controls.Add(this.dtpSecondaryBirthdate);
+            this.gbSecondary.Controls.Add(this.dtpSecondarySubscriberBirthdate);
             this.gbSecondary.Controls.Add(this.txtSecondaryCopayment);
             this.gbSecondary.Controls.Add(this.txtSecondaryGroupNum);
             this.gbSecondary.Controls.Add(this.txtSecondaryPolicyNum);
@@ -105,12 +105,12 @@
             this.gbSecondary.TabStop = false;
             this.gbSecondary.Text = "Secondary Insurance (If necessary)";
             // 
-            // dtpSecondaryBirthdate
+            // dtpSecondarySubscriberBirthdate
             // 
-            this.dtpSecondaryBirthdate.Location = new System.Drawing.Point(132, 184);
-            this.dtpSecondaryBirthdate.Name = "dtpSecondaryBirthdate";
-            this.dtpSecondaryBirthdate.Size = new System.Drawing.Size(200, 20);
-            this.dtpSecondaryBirthdate.TabIndex = 15;
+            this.dtpSecondarySubscriberBirthdate.Location = new System.Drawing.Point(132, 184);
+            this.dtpSecondarySubscriberBirthdate.Name = "dtpSecondarySubscriberBirthdate";
+            this.dtpSecondarySubscriberBirthdate.Size = new System.Drawing.Size(200, 20);
+            this.dtpSecondarySubscriberBirthdate.TabIndex = 15;
             // 
             // txtSecondaryCopayment
             // 
@@ -242,7 +242,7 @@
             this.gbPrimary.Controls.Add(this.txtGroupNum);
             this.gbPrimary.Controls.Add(this.txtPolicyNum);
             this.gbPrimary.Controls.Add(this.txtSubscriberName);
-            this.gbPrimary.Controls.Add(this.txtSocialSecurityNum);
+            this.gbPrimary.Controls.Add(this.txtSubscriberSocialSecurityNum);
             this.gbPrimary.Controls.Add(this.txtInsurance);
             this.gbPrimary.Controls.Add(this.cmbPatientRelationship);
             this.gbPrimary.Controls.Add(this.lblGroupNumber);
@@ -295,12 +295,12 @@
             this.txtSubscriberName.Size = new System.Drawing.Size(200, 20);
             this.txtSubscriberName.TabIndex = 5;
             // 
-            // txtSocialSecurityNum
+            // txtSubscriberSocialSecurityNum
             // 
-            this.txtSocialSecurityNum.Location = new System.Drawing.Point(544, 125);
-            this.txtSocialSecurityNum.Name = "txtSocialSecurityNum";
-            this.txtSocialSecurityNum.Size = new System.Drawing.Size(126, 20);
-            this.txtSocialSecurityNum.TabIndex = 6;
+            this.txtSubscriberSocialSecurityNum.Location = new System.Drawing.Point(544, 125);
+            this.txtSubscriberSocialSecurityNum.Name = "txtSubscriberSocialSecurityNum";
+            this.txtSubscriberSocialSecurityNum.Size = new System.Drawing.Size(126, 20);
+            this.txtSubscriberSocialSecurityNum.TabIndex = 6;
             // 
             // txtInsurance
             // 
@@ -454,7 +454,7 @@
 
         private System.Windows.Forms.Label lblPatientID;
         private System.Windows.Forms.GroupBox gbSecondary;
-        private System.Windows.Forms.DateTimePicker dtpSecondaryBirthdate;
+        private System.Windows.Forms.DateTimePicker dtpSecondarySubscriberBirthdate;
         private System.Windows.Forms.TextBox txtSecondaryCopayment;
         private System.Windows.Forms.TextBox txtSecondaryGroupNum;
         private System.Windows.Forms.TextBox txtSecondaryPolicyNum;
@@ -476,7 +476,7 @@
         private System.Windows.Forms.TextBox txtGroupNum;
         private System.Windows.Forms.TextBox txtPolicyNum;
         private System.Windows.Forms.TextBox txtSubscriberName;
-        private System.Windows.Forms.TextBox txtSocialSecurityNum;
+        private System.Windows.Forms.TextBox txtSubscriberSocialSecurityNum;
         private System.Windows.Forms.TextBox txtInsurance;
         private System.Windows.Forms.ComboBox cmbPatientRelationship;
         private System.Windows.Forms.Label lblGroupNumber;

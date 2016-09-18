@@ -61,7 +61,7 @@ namespace PatientRecords
                 txtPolicyNum.Text = dr["PolicyNum"].ToString();
                 txtCopayment.Text = dr["Copayment"].ToString();
                 txtSubscriberName.Text = dr["SubscriberName"].ToString();
-                txtSocialSecurityNum.Text = dr["SocialSecurityNum"].ToString();
+                txtSubscriberSocialSecurityNum.Text = dr["SubscriberSocialSecNum"].ToString();
                 dtpSubscriberBirthdate.Value = (DateTime)dr["SubscriberBirthdate"];
                 cmbPatientRelationship.SelectedItem = dr["PatientRelationship"].ToString();
 
@@ -72,7 +72,7 @@ namespace PatientRecords
                 txtSecondaryCopayment.Text = dr["SecondaryCopayment"].ToString();
                 txtSecondarySubscriberName.Text = dr["SecondarySubscriberName"].ToString();
                 txtSecondarySocialSecNum.Text = dr["SecondarySocialSecNum"].ToString();
-                dtpSecondaryBirthdate.Value = (DateTime)dr["SecondaryBirthdate"];
+                dtpSecondarySubscriberBirthdate.Value = (DateTime)dr["SecondarySubscriberBirthdate"];
                 cmbSecondaryPatientRelationship.SelectedItem = dr["SecondaryPatientRelationship"].ToString();
 
                 //We add this one to store the ID in a new label on the form
@@ -116,7 +116,7 @@ namespace PatientRecords
             ApatientInsurance.PolicyNum = txtPolicyNum.Text;
             ApatientInsurance.Copayment = txtCopayment.Text;
             ApatientInsurance.SubscriberName = txtSubscriberName.Text;
-            ApatientInsurance.SocialSecNum = txtSocialSecurityNum.Text;
+            ApatientInsurance.SubscriberSocialSecNum = txtSubscriberSocialSecurityNum.Text;
             ApatientInsurance.SubscriberBirthdate = dtpSubscriberBirthdate.Value;
             ApatientInsurance.PatientRelationship = cmbPatientRelationship.SelectedItem.ToString();
 
@@ -127,7 +127,7 @@ namespace PatientRecords
             ApatientInsurance.SecondaryCopayment = txtSecondaryCopayment.Text;
             ApatientInsurance.SecondarySubscriberName = txtSecondarySubscriberName.Text;
             ApatientInsurance.SecondarySocialSecNum = txtSecondarySocialSecNum.Text;
-            ApatientInsurance.SecondaryBirthdate = dtpSecondaryBirthdate.Value;
+            ApatientInsurance.SecondarySubscriberBirthdate = dtpSecondarySubscriberBirthdate.Value;
             ApatientInsurance.SecondaryPatientRelationship = cmbSecondaryPatientRelationship.SelectedItem.ToString();
 
             //If an error in information occurs..
@@ -153,7 +153,7 @@ namespace PatientRecords
             lblFeedback.Text += temp.PolicyNum + "\n";
             lblFeedback.Text += temp.Copayment + " ";
             lblFeedback.Text += temp.SubscriberName + " ";
-            lblFeedback.Text += temp.SocialSecNum + " ";
+            lblFeedback.Text += temp.SubscriberSocialSecNum + " ";
             lblFeedback.Text += temp.SubscriberBirthdate + " ";
             lblFeedback.Text += temp.PatientRelationship + "\n";
             //Employer/School information
@@ -163,7 +163,7 @@ namespace PatientRecords
             lblFeedback.Text += temp.SecondaryCopayment + "\n";
             lblFeedback.Text += temp.SecondarySubscriberName + " ";
             lblFeedback.Text += temp.SecondarySocialSecNum + " ";
-            lblFeedback.Text += temp.SecondaryBirthdate + " ";
+            lblFeedback.Text += temp.SecondarySubscriberBirthdate + " ";
             lblFeedback.Text += temp.SecondaryPatientRelationship + "\n";
         }
 
@@ -186,7 +186,7 @@ namespace PatientRecords
             temp.PolicyNum = txtPolicyNum.Text;
             temp.Copayment = txtCopayment.Text;
             temp.SubscriberName = txtSubscriberName.Text;
-            temp.SocialSecNum = txtSocialSecurityNum.Text;
+            temp.SubscriberSocialSecNum = txtSubscriberSocialSecurityNum.Text;
             temp.SubscriberBirthdate = dtpSubscriberBirthdate.Value;
             temp.PatientRelationship = cmbPatientRelationship.SelectedItem.ToString();
             temp.SecondaryInsurance = txtSecondaryInsurance.Text;
@@ -195,7 +195,7 @@ namespace PatientRecords
             temp.SecondaryCopayment = txtSecondaryCopayment.Text;
             temp.SecondarySubscriberName = txtSecondarySubscriberName.Text;
             temp.SecondarySocialSecNum = txtSecondarySocialSecNum.Text;
-            temp.SecondaryBirthdate = dtpSecondaryBirthdate.Value;
+            temp.SecondarySubscriberBirthdate = dtpSecondarySubscriberBirthdate.Value;
             temp.SecondaryPatientRelationship = cmbSecondaryPatientRelationship.SelectedItem.ToString();
             temp.PatientID = Convert.ToInt32(lblPID.Text);
 
