@@ -48,15 +48,15 @@ namespace PatientRecords
 
             set
             {
-                //Validating that the first name field has at least one character in it
+                //Validating that the Insurance field has at least one character in it
                 if (Validation.IsItFilledIn(value, 1) == false)
                 {
-                    //Feedback prompting the user that the First name field must have at least one character in it
+                    //Feedback prompting the user that the Insurance field must have at least one character in it
                     feedback += "ERROR: Please enter in a Primary Insurance... \n";
                 }
                 else
                 {
-                    insurance = value; //"value" is a keyword that represents the value in the public var (Fname)
+                    insurance = value; //"value" is a keyword that represents the value in the public var (Insurance)
                 }
             }
         }
@@ -70,15 +70,15 @@ namespace PatientRecords
 
             set
             {
-                //Validating that the first name field has at least one character in it
+                //Validating that the GroupNum field has at least one character in it
                 if (Validation.IsItFilledIn(value, 1) == false)
                 {
-                    //Feedback prompting the user that the First name field must have at least one character in it
+                    //Feedback prompting the user that the GroupNum field must have at least one character in it
                     feedback += "ERROR: Please enter in a Primary Insurance Group Number... \n";
                 }
                 else
                 {
-                    groupNum = value; //"value" is a keyword that represents the value in the public var (Fname)
+                    groupNum = value; //"value" is a keyword that represents the value in the public var (GroupNum)
                 }
             }
         }
@@ -92,15 +92,15 @@ namespace PatientRecords
 
             set
             {
-                //Validating that the first name field has at least one character in it
+                //Validating that the PolicyNum field has at least one character in it
                 if (Validation.IsItFilledIn(value, 1) == false)
                 {
-                    //Feedback prompting the user that the First name field must have at least one character in it
+                    //Feedback prompting the user that the PolicyNum field must have at least one character in it
                     feedback += "ERROR: Please enter in a Primary Insurance Policy Number... \n";
                 }
                 else
                 {
-                    policyNum = value; //"value" is a keyword that represents the value in the public var (Fname)
+                    policyNum = value; //"value" is a keyword that represents the value in the public var (PolicyNum)
                 }
             }
         }
@@ -114,15 +114,15 @@ namespace PatientRecords
 
             set
             {
-                //Validating that the first name field has at least one character in it
+                //Validating that the Copayment field has at least one character in it
                 if (Validation.IsItFilledIn(value, 1) == false)
                 {
-                    //Feedback prompting the user that the First name field must have at least one character in it
+                    //Feedback prompting the user that the Copayment field must have at least one character in it
                     feedback += "ERROR: Please enter in a Primary Insurance Copayment... \n";
                 }
                 else
                 {
-                    copayment = value; //"value" is a keyword that represents the value in the public var (Fname)
+                    copayment = value; //"value" is a keyword that represents the value in the public var (Copayment)
                 }
             }
         }
@@ -136,15 +136,15 @@ namespace PatientRecords
 
             set
             {
-                //Validating that the first name field has at least one character in it
+                //Validating that the SubscriberName field has at least one character in it
                 if (Validation.IsItFilledIn(value, 1) == false)
                 {
-                    //Feedback prompting the user that the First name field must have at least one character in it
+                    //Feedback prompting the user that the SubscriberName field must have at least one character in it
                     feedback += "ERROR: Please enter in a Primary Insurance Subscriber Name... \n";
                 }
                 else
                 {
-                    subscriberName = value; //"value" is a keyword that represents the value in the public var (Fname)
+                    subscriberName = value; //"value" is a keyword that represents the value in the public var (SubscriberName)
                 }
             }
         }
@@ -158,15 +158,15 @@ namespace PatientRecords
 
             set
             {
-                //Validating that the first name field has at least one character in it
+                //Validating that the SubscriberSocialSecNum field has at least one character in it
                 if (Validation.IsItFilledIn(value, 1) == false)
                 {
-                    //Feedback prompting the user that the First name field must have at least one character in it
+                    //Feedback prompting the user that the SubscriberSocialSecNum field must have at least one character in it
                     feedback += "ERROR: Please enter in a Primary Insurance Social Security Number... \n";
                 }
                 else
                 {
-                    subscriberSocialSecNum = value; //"value" is a keyword that represents the value in the public var (Fname)
+                    subscriberSocialSecNum = value; //"value" is a keyword that represents the value in the public var (SubscriberSocialSecNum)
                 }
             }
         }
