@@ -247,7 +247,7 @@ namespace PatientRecords
             string strFeedback = "";
             
             //SQL Command to add a record to the Patient Information DB
-            string strSQL = "INSERT INTO PatientInfo (Insurance, GroupNum, PolicyNum, Copayment, SubscriberName, SocialSecNum, SubscriberBirthdate, PatientRelationship, SecondaryInsurance, SecondaryGroupNum, SecondaryPolicyNum, SecondaryCopayment, SecondarySubscriberName, SecondarySocialSecNum, SecondaryBirthdate, SecondaryPatientRelationship) VALUES (@Insurance, @GroupNum, @PolicyNum, @Copayment, @SubscriberName, @SocialSecNum, @SubscriberBirthdate, @PatientRelationship, @SecondaryInsurance, @SecondaryGroupNum, @SecondaryPolicyNum, @SecondaryCopayment, @SecondarySubscriberName, @SecondarySocialSecNum, @SecondaryBirthdate, @SecondaryPatientRelationship)";
+            string strSQL = "INSERT INTO PatientInsurance (Insurance, GroupNum, PolicyNum, Copayment, SubscriberName, SocialSecNum, SubscriberBirthdate, PatientRelationship, SecondaryInsurance, SecondaryGroupNum, SecondaryPolicyNum, SecondaryCopayment, SecondarySubscriberName, SecondarySocialSecNum, SecondaryBirthdate, SecondaryPatientRelationship) VALUES (@Insurance, @GroupNum, @PolicyNum, @Copayment, @SubscriberName, @SocialSecNum, @SubscriberBirthdate, @PatientRelationship, @SecondaryInsurance, @SecondaryGroupNum, @SecondaryPolicyNum, @SecondaryCopayment, @SecondarySubscriberName, @SecondarySocialSecNum, @SecondaryBirthdate, @SecondaryPatientRelationship)";
 
             //creating database connection 
             SqlConnection conn = new SqlConnection();
@@ -308,7 +308,7 @@ namespace PatientRecords
             Int32 intRecords = 0;
 
             //Create SQL command string
-            string strSQL = "UPDATE PatientInfo SET Insurance = @Insurance, GroupNum = @GroupNum, PolicyNum = @PolicyNum, Copayment = @Copayment, SubscriberName = @SubscriberName, SocialSecNum = @SocialSecNum, SubscriberBirthdate = @SubscriberBirthdate, PatientRelationship = @PatientRelationship, SecondaryInsurance = @SecondaryInsurance, SecondaryGroupNum = @SecondaryGroupNum, SecondaryPolicyNum = @SecondaryPolicyNum, SecondaryCopayment = @SecondaryCopayment, SecondarySubscriberName = @SecondarySubscriberName, SecondarySocialSecNum = @SecondarySocialSecNum, SecondaryBirthdate = @SecondaryBirthdate, SecondaryPatientRelationship = @SecondaryPatientRelationship WHERE InsuranceID = @InsuranceID;";
+            string strSQL = "UPDATE PatientInsurance SET Insurance = @Insurance, GroupNum = @GroupNum, PolicyNum = @PolicyNum, Copayment = @Copayment, SubscriberName = @SubscriberName, SocialSecNum = @SocialSecNum, SubscriberBirthdate = @SubscriberBirthdate, PatientRelationship = @PatientRelationship, SecondaryInsurance = @SecondaryInsurance, SecondaryGroupNum = @SecondaryGroupNum, SecondaryPolicyNum = @SecondaryPolicyNum, SecondaryCopayment = @SecondaryCopayment, SecondarySubscriberName = @SecondarySubscriberName, SecondarySocialSecNum = @SecondarySocialSecNum, SecondaryBirthdate = @SecondaryBirthdate, SecondaryPatientRelationship = @SecondaryPatientRelationship WHERE InsuranceID = @InsuranceID;";
 
             //Create connection to the DB
             SqlConnection conn = new SqlConnection();
@@ -382,7 +382,7 @@ namespace PatientRecords
             string strConn = MyTools.GetConnected();
 
             //The SQL Command string to pull up one person's data
-            string strSQL = "SELECT InsuranceID, PatientID, Insurance, GroupNum, PolicyNum, Copayment, SubscriberName, SocialSecNum, SubscriberBirthdate, PatientRelationship, SecondaryInsurance, SecondaryGroupNum, SecondaryPolicyNum, SecondaryCopayment, SecondarySubscriberName, SecondarySocialSecNum, SecondaryBirthdate, SecondaryPatientRelationship FROM PatientInfo WHERE PatientID = @PatientID;";
+            string strSQL = "SELECT InsuranceID, PatientID, Insurance, GroupNum, PolicyNum, Copayment, SubscriberName, SocialSecNum, SubscriberBirthdate, PatientRelationship, SecondaryInsurance, SecondaryGroupNum, SecondaryPolicyNum, SecondaryCopayment, SecondarySubscriberName, SecondarySocialSecNum, SecondaryBirthdate, SecondaryPatientRelationship FROM PatientInsurance WHERE PatientID = @PatientID;";
 
             //Tell the connection object the who, what, where, how
             conn.ConnectionString = strConn;
