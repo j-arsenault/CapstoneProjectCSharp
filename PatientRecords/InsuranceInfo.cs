@@ -16,10 +16,7 @@ namespace PatientRecords
         public InsuranceInfo()
         {
             InitializeComponent();
-        }
 
-        private void InsuranceInfo_Load(object sender, EventArgs e)
-        {
             //When form loads fill Relationship drop downs
             FillRelationship();
             //When form loads set Patient Relationship index to 0
@@ -33,6 +30,25 @@ namespace PatientRecords
             //Disable edit buttons
             btnUpdate.Visible = false;
             btnUpdate.Enabled = false;
+        }
+
+        private void InsuranceInfo_Load(object sender, EventArgs e)
+        {
+            /*
+            //When form loads fill Relationship drop downs
+            FillRelationship();
+            //When form loads set Patient Relationship index to 0
+            cmbPatientRelationship.SelectedIndex = 0;
+
+            //When form loads fill Relationship drop downs
+            FillSecondaryRelationship();
+            //When form loads set Patient Relationship index to 0
+            cmbSecondaryPatientRelationship.SelectedIndex = 0;
+
+            //Disable edit buttons
+            btnUpdate.Visible = false;
+            btnUpdate.Enabled = false;
+             */
         }
 
 
