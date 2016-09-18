@@ -93,8 +93,19 @@ namespace PatientRecords
                 txtSecondaryCopayment.Text = dr["SecondaryCopayment"].ToString();
                 txtSecondarySubscriberName.Text = dr["SecondarySubscriberName"].ToString();
                 txtSecondarySocialSecNum.Text = dr["SecondarySocialSecNum"].ToString();
-                dtpSecondarySubscriberBirthdate.Value = (DateTime)dr["SecondarySubscriberBirthdate"];
+                //dtpSecondarySubscriberBirthdate.Value = (DateTime)dr["SecondarySubscriberBirthdate"];
+                
+                //Checking if the information coming out of the DB is a datetime or is a null value in the DB
+                if (dr["SecondarySubscriberBirthdate"] != System.DBNull.Value)
+                {
+                    dtpSecondarySubscriberBirthdate.Value = (DateTime)dr["SecondarySubscriberBirthdate"];
+                }
+                else
+                {
+                    dtpSecondarySubscriberBirthdate.Value = DateTime.Today;
+                }
                 cmbSecondaryPatientRelationship.SelectedItem = dr["SecondaryPatientRelationship"].ToString();
+
 
                 //We add this one to store the ID in a new label on the form
                 lblPID.Text = dr["PatientID"].ToString();
