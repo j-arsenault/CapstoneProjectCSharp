@@ -345,6 +345,7 @@ namespace PatientRecords
             //comm.Parameters.AddWithValue(@"SecondaryBirthdate", SecondaryBirthdate.ToString());
             //comm.Parameters.AddWithValue(@"SecondaryPatientRelationship", SecondaryPatientRelationship);
             //comm.Parameters.AddWithValue("@PatientID", PatientID);
+            //comm.Parameters.AddWithValue(@"InsuranceID", InsuranceID);
 
             try
             {
