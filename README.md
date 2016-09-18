@@ -1,7 +1,7 @@
 # CapstoneProjectCSharp
 Capstone Project Repository -- C Sharp 
 
-![Statys](https://img.shields.io/badge/Complete-60%25-orange.svg) [![CircleCI](https://img.shields.io/circleci/project/BrightFlair/PHP.Gt.svg?maxAge=2592000?style=flat-square)]()
+![Statys](https://img.shields.io/badge/Complete-65%25-orange.svg) [![CircleCI](https://img.shields.io/circleci/project/BrightFlair/PHP.Gt.svg?maxAge=2592000?style=flat-square)]()
 ![Statys](https://img.shields.io/badge/Team Members-Ian + Jameson-red.svg)
 ![Statys](https://img.shields.io/badge/Frameworks-Metro UI Modern Metro Framework-blue.svg)
 
@@ -18,6 +18,7 @@ Documentation Site:
  - [x] Working Hardcoded Login
  - [x] Database Driven Login <--- STILL NEED TO DO WHEN EVERYTHING IS READY TO GO TO THE DATABASE
  - [x] Username/Password
+ - [x] Hide the text being put into the password textbox
  - [x] Error message/Acceptance message when logging in
  - [x] Once logged in, Add/Search buttons appear
  
@@ -39,8 +40,12 @@ Documentation Site:
 
 * Insurance form
  - [x] Build Insurance Form
- - Create InsuranceInfo class to house the private variables
- - Ability to add or update patient Insurance information
+ - [x] Fill Insurance Form with data when opened from a Patient Information form who is already in the DB
+ - [x] Create InsuranceInfo class to house the private variables
+ - Update Insurance form information and put it to the DB
+ - Add new Insurance Form information
+ - Open blank form when the Patient is not already in the DB
+ - Figure out how to allow nulls in secondary (Try to find a way to set the date to the current date if pulling from a patient who is already in the DB)
 
 * Medical History form
  - [x] Build Medical History Form
