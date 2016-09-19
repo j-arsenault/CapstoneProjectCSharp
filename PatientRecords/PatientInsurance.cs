@@ -308,7 +308,7 @@ namespace PatientRecords
             Int32 intRecords = 0;
 
             //Create SQL command string
-            string strSQL = "UPDATE PatientInsurance SET Insurance = @Insurance, GroupNum = @GroupNum, PolicyNum = @PolicyNum, Copayment = @Copayment, SubscriberName = @SubscriberName, SubscriberBirthdate = @SubscriberBirthdate, SubscriberSocialSecNum = @SubscriberSocialSecNum, PatientRelationship = @PatientRelationship, SecondaryInsurance = @SecondaryInsurance, SecondaryGroupNum = @SecondaryGroupNum, SecondaryPolicyNum = @SecondaryPolicyNum, SecondaryCopayment = @SecondaryCopayment, SecondarySubscriberName = @SecondarySubscriberName, SecondarySubscriberBirthdate = @SecondarySubscriberBirthdate, SecondarySocialSecNum = @SecondarySocialSecNum, SecondaryPatientRelationship = @SecondaryPatientRelationship, PatientID = @PatientID WHERE InsuranceID = @InsuranceID;";
+            string strSQL = "UPDATE PatientInsurance SET PatientID = @PatientID, Insurance = @Insurance, GroupNum = @GroupNum, PolicyNum = @PolicyNum, Copayment = @Copayment, SubscriberName = @SubscriberName, SubscriberBirthdate = @SubscriberBirthdate, SubscriberSocialSecNum = @SubscriberSocialSecNum, PatientRelationship = @PatientRelationship, SecondaryInsurance = @SecondaryInsurance, SecondaryGroupNum = @SecondaryGroupNum, SecondaryPolicyNum = @SecondaryPolicyNum, SecondaryCopayment = @SecondaryCopayment, SecondarySubscriberName = @SecondarySubscriberName, SecondarySubscriberBirthdate = @SecondarySubscriberBirthdate, SecondarySocialSecNum = @SecondarySocialSecNum, SecondaryPatientRelationship = @SecondaryPatientRelationship WHERE InsuranceID = @InsuranceID;";
 
             //Create connection to the DB
             SqlConnection conn = new SqlConnection();
@@ -328,6 +328,7 @@ namespace PatientRecords
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             //~~~~~~~HAS TO BE IN THE SAME SEQUENCE AS THEY ARE USED IN THE SQL STATEMENT~~~~~~~~~~~~
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            comm.Parameters.AddWithValue("@PatientID", PatientID);
             comm.Parameters.AddWithValue("@Insurance", Insurance);
             comm.Parameters.AddWithValue("@GroupNum", GroupNum);
             comm.Parameters.AddWithValue("@PolicyNum", PolicyNum);
@@ -344,7 +345,6 @@ namespace PatientRecords
             comm.Parameters.AddWithValue(@"SecondarySubscriberBirthdate", SecondarySubscriberBirthdate.ToString());
             comm.Parameters.AddWithValue(@"SecondarySocialSecNum", SecondarySocialSecNum);
             comm.Parameters.AddWithValue(@"SecondaryPatientRelationship", SecondaryPatientRelationship);
-            comm.Parameters.AddWithValue("@PatientID", PatientID);
             comm.Parameters.AddWithValue(@"InsuranceID", InsuranceID);
 
             try

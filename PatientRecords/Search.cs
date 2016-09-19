@@ -15,6 +15,8 @@ namespace PatientRecords
         public Search()
         {
             InitializeComponent();
+            txtPID.Visible = false;
+            lblPatientID.Visible = false;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

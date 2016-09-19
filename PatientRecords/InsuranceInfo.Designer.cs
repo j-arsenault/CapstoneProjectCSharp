@@ -67,6 +67,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.lblFeedback = new System.Windows.Forms.Label();
             this.lblPID = new System.Windows.Forms.Label();
+            this.lblInsID = new System.Windows.Forms.Label();
             this.gbSecondary.SuspendLayout();
             this.gbPrimary.SuspendLayout();
             this.SuspendLayout();
@@ -408,6 +409,7 @@
             this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "Update Insurance";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // lblFeedback
             // 
@@ -426,11 +428,20 @@
             this.lblPID.Size = new System.Drawing.Size(0, 13);
             this.lblPID.TabIndex = 11;
             // 
+            // lblInsID
+            // 
+            this.lblInsID.AutoSize = true;
+            this.lblInsID.Location = new System.Drawing.Point(12, 6);
+            this.lblInsID.Name = "lblInsID";
+            this.lblInsID.Size = new System.Drawing.Size(0, 13);
+            this.lblInsID.TabIndex = 19;
+            // 
             // InsuranceInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 702);
+            this.Controls.Add(this.lblInsID);
             this.Controls.Add(this.lblPID);
             this.Controls.Add(this.lblFeedback);
             this.Controls.Add(this.btnUpdate);
@@ -491,5 +502,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label lblFeedback;
         private System.Windows.Forms.Label lblPID;
+        private System.Windows.Forms.Label lblInsID;
     }
 }

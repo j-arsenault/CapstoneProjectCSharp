@@ -30,6 +30,8 @@ namespace PatientRecords
             //Disable edit buttons
             btnUpdate.Visible = false;
             btnUpdate.Enabled = false;
+
+            lblInsID.Visible = false;
         }
 
         private void InsuranceInfo_Load(object sender, EventArgs e)
@@ -66,6 +68,8 @@ namespace PatientRecords
             //Disable the add capability because they already exist
             btnAdd.Visible = false;
             btnAdd.Enabled = false;
+
+            //lblInsID.Visible = false;
 
             //Gather info about this one person and store it in a datareader
             PatientInsurance temp = new PatientInsurance();
@@ -109,6 +113,8 @@ namespace PatientRecords
 
                 //We add this one to store the ID in a new label on the form
                 lblPID.Text = dr["PatientID"].ToString();
+                //We add this to store the PK of Insurance ID in a new label on the form /// the label is hidden from view
+                lblInsID.Text = dr["InsuranceID"].ToString();
             }
         }
 
@@ -234,6 +240,7 @@ namespace PatientRecords
             temp.SecondarySubscriberBirthdate = dtpSecondarySubscriberBirthdate.Value;
             temp.SecondaryPatientRelationship = cmbSecondaryPatientRelationship.SelectedItem.ToString();
             temp.PatientID = Convert.ToInt32(lblPID.Text);
+            temp.InsuranceID = Convert.ToInt32(lblInsID.Text);
 
             //Checking to see all validation has been met
             // and if any ERRORS have happened

@@ -43,31 +43,31 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(683, 44);
+            this.btnSearch.Location = new System.Drawing.Point(683, 49);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(99, 31);
-            this.btnSearch.TabIndex = 0;
+            this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtPID
             // 
-            this.txtPID.Location = new System.Drawing.Point(86, 60);
+            this.txtPID.Location = new System.Drawing.Point(29, 60);
             this.txtPID.Name = "txtPID";
             this.txtPID.Size = new System.Drawing.Size(87, 20);
             this.txtPID.TabIndex = 1;
             // 
             // txtFName
             // 
-            this.txtFName.Location = new System.Drawing.Point(304, 60);
+            this.txtFName.Location = new System.Drawing.Point(124, 60);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(151, 20);
             this.txtFName.TabIndex = 2;
             // 
             // txtLName
             // 
-            this.txtLName.Location = new System.Drawing.Point(487, 59);
+            this.txtLName.Location = new System.Drawing.Point(450, 60);
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(151, 20);
             this.txtLName.TabIndex = 3;
@@ -84,7 +84,7 @@
             // lblPatientID
             // 
             this.lblPatientID.AutoSize = true;
-            this.lblPatientID.Location = new System.Drawing.Point(83, 44);
+            this.lblPatientID.Location = new System.Drawing.Point(26, 44);
             this.lblPatientID.Name = "lblPatientID";
             this.lblPatientID.Size = new System.Drawing.Size(57, 13);
             this.lblPatientID.TabIndex = 5;
@@ -93,16 +93,16 @@
             // lblOrBy
             // 
             this.lblOrBy.AutoSize = true;
-            this.lblOrBy.Location = new System.Drawing.Point(210, 62);
+            this.lblOrBy.Location = new System.Drawing.Point(348, 62);
             this.lblOrBy.Name = "lblOrBy";
-            this.lblOrBy.Size = new System.Drawing.Size(33, 13);
+            this.lblOrBy.Size = new System.Drawing.Size(48, 13);
             this.lblOrBy.TabIndex = 6;
-            this.lblOrBy.Text = "Or By";
+            this.lblOrBy.Text = "And / Or";
             // 
             // lblFirst
             // 
             this.lblFirst.AutoSize = true;
-            this.lblFirst.Location = new System.Drawing.Point(301, 44);
+            this.lblFirst.Location = new System.Drawing.Point(121, 44);
             this.lblFirst.Name = "lblFirst";
             this.lblFirst.Size = new System.Drawing.Size(60, 13);
             this.lblFirst.TabIndex = 7;
@@ -111,7 +111,7 @@
             // lblLast
             // 
             this.lblLast.AutoSize = true;
-            this.lblLast.Location = new System.Drawing.Point(484, 39);
+            this.lblLast.Location = new System.Drawing.Point(447, 44);
             this.lblLast.Name = "lblLast";
             this.lblLast.Size = new System.Drawing.Size(61, 13);
             this.lblLast.TabIndex = 8;
@@ -123,7 +123,7 @@
             this.gvResults.Location = new System.Drawing.Point(29, 112);
             this.gvResults.Name = "gvResults";
             this.gvResults.Size = new System.Drawing.Size(753, 572);
-            this.gvResults.TabIndex = 9;
+            this.gvResults.TabIndex = 5;
             this.gvResults.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvResults_CellContentDoubleClick);
             // 
             // Search
