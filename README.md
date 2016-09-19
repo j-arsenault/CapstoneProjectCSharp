@@ -1,7 +1,7 @@
 # CapstoneProjectCSharp
 Capstone Project Repository -- C Sharp 
 
-![Statys](https://img.shields.io/badge/Complete-65%25-orange.svg) [![CircleCI](https://img.shields.io/circleci/project/BrightFlair/PHP.Gt.svg?maxAge=2592000?style=flat-square)]()
+![Statys](https://img.shields.io/badge/Complete-70%25-orange.svg) [![CircleCI](https://img.shields.io/circleci/project/BrightFlair/PHP.Gt.svg?maxAge=2592000?style=flat-square)]()
 ![Statys](https://img.shields.io/badge/Team Members-Ian + Jameson-red.svg)
 ![Statys](https://img.shields.io/badge/Frameworks-Metro UI Modern Metro Framework-blue.svg)
 
@@ -42,10 +42,10 @@ Documentation Site:
  - [x] Build Insurance Form
  - [x] Fill Insurance Form with data when opened from a Patient Information form who is already in the DB
  - [x] Create InsuranceInfo class to house the private variables
- - Update Insurance form information and put it to the DB
+ - [x] Update Insurance form information and put it to the DB
  - Add new Insurance Form information
- - Open blank form when the Patient is not already in the DB
- - Figure out how to allow nulls in secondary (Try to find a way to set the date to the current date if pulling from a patient who is already in the DB)
+ - [x] Open blank form when the Patient is not already in the DB
+ - [x] Figure out how to allow nulls in secondary (Try to find a way to set the date to the current date if pulling from a patient who is already in the DB)
 
 * Medical History form
  - [x] Build Medical History Form
