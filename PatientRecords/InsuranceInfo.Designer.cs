@@ -68,6 +68,7 @@
             this.lblFeedback = new System.Windows.Forms.Label();
             this.lblPID = new System.Windows.Forms.Label();
             this.lblInsID = new System.Windows.Forms.Label();
+            this.lblPatientIDInsurance = new System.Windows.Forms.Label();
             this.gbSecondary.SuspendLayout();
             this.gbPrimary.SuspendLayout();
             this.SuspendLayout();
@@ -436,11 +437,20 @@
             this.lblInsID.Size = new System.Drawing.Size(0, 13);
             this.lblInsID.TabIndex = 19;
             // 
+            // lblPatientIDInsurance
+            // 
+            this.lblPatientIDInsurance.AutoSize = true;
+            this.lblPatientIDInsurance.Location = new System.Drawing.Point(384, 19);
+            this.lblPatientIDInsurance.Name = "lblPatientIDInsurance";
+            this.lblPatientIDInsurance.Size = new System.Drawing.Size(0, 13);
+            this.lblPatientIDInsurance.TabIndex = 20;
+            // 
             // InsuranceInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 702);
+            this.Controls.Add(this.lblPatientIDInsurance);
             this.Controls.Add(this.lblInsID);
             this.Controls.Add(this.lblPID);
             this.Controls.Add(this.lblFeedback);
@@ -503,5 +513,6 @@
         private System.Windows.Forms.Label lblFeedback;
         private System.Windows.Forms.Label lblPID;
         private System.Windows.Forms.Label lblInsID;
+        private System.Windows.Forms.Label lblPatientIDInsurance;
     }
 }

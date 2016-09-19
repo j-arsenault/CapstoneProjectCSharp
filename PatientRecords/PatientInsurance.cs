@@ -31,6 +31,7 @@ namespace PatientRecords
         private string feedback;
         public Int32 PatientID = 0;
         public Int32 InsuranceID = 0;
+        public Int32 PatientIDInsurance = 0;
 
         //These are public variables that are the front-end to the private variables.
         //They protect the private variables from getting bogus information, or giving out data to the wrong person
@@ -240,6 +241,84 @@ namespace PatientRecords
             secondarySocialSecNum = "";
         }
 
+
+        //Function to grab the PatientID in the last record added to Patients
+        public SqlDataReader GrabLastRecord()
+        {
+            //Create and Initialize the DB tools we need to use
+            SqlConnection conn = new SqlConnection();
+            SqlCommand comm = new SqlCommand();
+
+            //The Connection String being used
+            //Create the who what and where of the DB
+            string strConn = MyTools.GetConnected();
+
+            //The SQL Command string to pull up one person's data
+            string strSQL = "SELECT TOP 1 PatientID FROM Patients ORDER BY PatientID DESC";
+
+            //Tell the connection object the who, what, where, how
+            conn.ConnectionString = strConn;
+
+            //Give the command object info it needs
+            comm.Connection = conn;
+            comm.CommandText = strSQL;
+            comm.Parameters.AddWithValue("@PatientID", PatientIDInsurance);
+
+            //Open the DataBase Connection and Yell our SQL command
+            conn.Open();
+
+            //Return some form of feedback
+            return comm.ExecuteReader(); //Return the dataset to be used by others (the calling form) 
+        }
+
+        /*
+        //Function to grab the PatientID in the last record added to Patients
+        public virtual string GrabLastRecord()
+        {
+            //Clearing strFeedback
+            string strFeedback = "";
+
+            //int PatientID = InsuranceID + 1;
+
+            //SQL Command to grab the top record from Patients
+            string strSQL = "SELECT TOP 1 PatientID FROM Patients ORDER BY PatientID DESC";
+
+            //creating database connection 
+            SqlConnection conn = new SqlConnection();
+            //Create the who what and where of the DB
+            string strConn = MyTools.GetConnected();
+            //Creating the connection string using the oldedb conn variable and equaling it to the information gathered from connectionstring website
+            conn.ConnectionString = strConn;
+
+            //creating database command connection
+            SqlCommand comm = new SqlCommand();
+            comm.CommandText = strSQL; //Commander knows what to say
+            comm.Connection = conn;   //Getting the connection
+
+            //Fill in the parameters (has to be created in same sequence as they are used in SQL Statement).
+            comm.Parameters.AddWithValue(@"PatientID", PatientIDInsurance);
+
+            try
+            {
+                //open a connection to the database
+                conn.Open();
+
+                //Giving strFeedback the number of records added
+                strFeedback = comm.ExecuteNonQuery().ToString();
+
+                //close the database
+                conn.Close();
+            }
+            catch (Exception err)
+            {
+                //If we catch an error........
+                //Put the error message into strFeedback
+                strFeedback = "ERROR: " + err.Message;
+            }
+            return strFeedback;
+        }
+         */
+
         //Adding a record
         public virtual string AddRecord()
         {
@@ -264,7 +343,7 @@ namespace PatientRecords
             comm.Connection = conn;   //Getting the connection
 
             //Fill in the parameters (has to be created in same sequence as they are used in SQL Statement).
-            comm.Parameters.AddWithValue(@"PatientID", PatientID);
+            comm.Parameters.AddWithValue(@"PatientID", PatientIDInsurance);
             comm.Parameters.AddWithValue(@"Insurance", Insurance);
             comm.Parameters.AddWithValue(@"GroupNum", GroupNum);
             comm.Parameters.AddWithValue(@"PolicyNum", PolicyNum);
@@ -282,68 +361,6 @@ namespace PatientRecords
             comm.Parameters.AddWithValue(@"SecondarySocialSecNum", SecondarySocialSecNum);
             comm.Parameters.AddWithValue(@"SecondaryPatientRelationship", SecondaryPatientRelationship);
             
-            try
-            {
-                //open a connection to the database
-                conn.Open();
-
-                //Giving strFeedback the number of records added
-                strFeedback = comm.ExecuteNonQuery().ToString() + " Records Added";
-
-                //close the database
-                conn.Close();
-            }
-            catch (Exception err)
-            {
-                //If we catch an error........
-                //Put the error message into strFeedback
-                strFeedback = "ERROR: " + err.Message;
-            }
-            return strFeedback;
-        }
-
-
-        public virtual string GrabLastRecord()
-        {
-            //Clearing strFeedback
-            string strFeedback = "";
-
-            //int PatientID = InsuranceID + 1;
-
-            //SQL Command to add a record to the Patient Information DB
-            string strSQL = "INSERT INTO PatientInsurance (PatientID, Insurance, GroupNum, PolicyNum, Copayment, SubscriberName, SubscriberBirthdate, SubscriberSocialSecNum, PatientRelationship, SecondaryInsurance, SecondaryGroupNum, SecondaryPolicyNum, SecondaryCopayment, SecondarySubscriberName, SecondarySubscriberBirthdate, SecondarySocialSecNum, SecondaryPatientRelationship) VALUES (@PatientID, @Insurance, @GroupNum, @PolicyNum, @Copayment, @SubscriberName, @SubscriberBirthdate, @SubscriberSocialSecNum, @PatientRelationship, @SecondaryInsurance, @SecondaryGroupNum, @SecondaryPolicyNum, @SecondaryCopayment, @SecondarySubscriberName, @SecondarySubscriberBirthdate, @SecondarySocialSecNum, @SecondaryPatientRelationship)";
-
-            //creating database connection 
-            SqlConnection conn = new SqlConnection();
-            //Create the who what and where of the DB
-            string strConn = MyTools.GetConnected();
-            //Creating the connection string using the oldedb conn variable and equaling it to the information gathered from connectionstring website
-            conn.ConnectionString = strConn;
-
-            //creating database command connection
-            SqlCommand comm = new SqlCommand();
-            comm.CommandText = strSQL; //Commander knows what to say
-            comm.Connection = conn;   //Getting the connection
-
-            //Fill in the parameters (has to be created in same sequence as they are used in SQL Statement).
-            comm.Parameters.AddWithValue(@"PatientID", PatientID);
-            comm.Parameters.AddWithValue(@"Insurance", Insurance);
-            comm.Parameters.AddWithValue(@"GroupNum", GroupNum);
-            comm.Parameters.AddWithValue(@"PolicyNum", PolicyNum);
-            comm.Parameters.AddWithValue(@"Copayment", Copayment);
-            comm.Parameters.AddWithValue(@"SubscriberName", SubscriberName);
-            comm.Parameters.AddWithValue(@"SubscriberBirthdate", SubscriberBirthdate.ToString());
-            comm.Parameters.AddWithValue(@"SubscriberSocialSecNum", SubscriberSocialSecNum);
-            comm.Parameters.AddWithValue(@"PatientRelationship", PatientRelationship);
-            comm.Parameters.AddWithValue(@"SecondaryInsurance", SecondaryInsurance);
-            comm.Parameters.AddWithValue(@"SecondaryGroupNum", SecondaryGroupNum);
-            comm.Parameters.AddWithValue(@"SecondaryPolicyNum", SecondaryPolicyNum);
-            comm.Parameters.AddWithValue(@"SecondaryCopayment", SecondaryCopayment);
-            comm.Parameters.AddWithValue(@"SecondarySubscriberName", SecondarySubscriberName);
-            comm.Parameters.AddWithValue(@"SecondarySubscriberBirthdate", SecondarySubscriberBirthdate.ToString());
-            comm.Parameters.AddWithValue(@"SecondarySocialSecNum", SecondarySocialSecNum);
-            comm.Parameters.AddWithValue(@"SecondaryPatientRelationship", SecondaryPatientRelationship);
-
             try
             {
                 //open a connection to the database

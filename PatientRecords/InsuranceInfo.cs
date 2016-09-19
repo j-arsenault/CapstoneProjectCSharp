@@ -65,6 +65,9 @@ namespace PatientRecords
             //When form loads fill Relationship drop downs
             FillSecondaryRelationship();
 
+            //When form loads set Patient Relationship index to 0
+            cmbSecondaryPatientRelationship.SelectedIndex = 0;
+
             //Disable the add capability because they already exist
             btnAdd.Visible = false;
             btnAdd.Enabled = false;
@@ -182,7 +185,18 @@ namespace PatientRecords
             {
                 //Fill label with the patients information
                 FillLabel(ApatientInsurance);
-                ApatientInsurance.GrabLastRecord();
+                /*
+                SqlDataReader dr = ApatientInsurance.GrabLastRecord();
+
+                //Use this info to fill out the form
+                //Loop through the records store in the reader 1 record at a time
+                //Since this is based on one person's ID we should only have one record
+                while (dr.Read())
+                {
+                    //We add this one to store the ID in a hidden label on the form
+                    lblPatientIDInsurance.Text = dr["PatientID"].ToString();
+                }
+                */
                 lblFeedback.Text = ApatientInsurance.AddRecord();
             }
         }
