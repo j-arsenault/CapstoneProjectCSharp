@@ -1,7 +1,7 @@
 # CapstoneProjectCSharp
 Capstone Project Repository -- C Sharp 
 
-![Statys](https://img.shields.io/badge/Complete-70%25-orange.svg) [![CircleCI](https://img.shields.io/circleci/project/BrightFlair/PHP.Gt.svg?maxAge=2592000?style=flat-square)]()
+![Statys](https://img.shields.io/badge/Complete-75%25-orange.svg) [![CircleCI](https://img.shields.io/circleci/project/BrightFlair/PHP.Gt.svg?maxAge=2592000?style=flat-square)]()
 ![Statys](https://img.shields.io/badge/Team Members-Ian + Jameson-red.svg)
 ![Statys](https://img.shields.io/badge/Frameworks-Metro UI Modern Metro Framework-blue.svg)
 
@@ -36,7 +36,7 @@ Documentation Site:
  - [x] Record all patient data
  - [x] Ability to click Medical History button and be brought to the Medical History Form
  - [x] Ability to click "Click For Details" under Insurance Provider and be brought to the Insurance Form
- - Ability to copy patients Address information into the "Emergency Contact" Address information sections
+ - [x] Ability to copy patients Address information into the "Emergency Contact" Address information sections
 
 * Insurance form
  - [x] Build Insurance Form
