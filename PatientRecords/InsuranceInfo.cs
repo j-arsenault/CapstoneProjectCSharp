@@ -83,7 +83,7 @@ namespace PatientRecords
             //Since this is based on one person's ID we should only have one record
             while (dr.Read())
             {
-                //Take the Name(s) from the datareader and copy them into the appropriate text fields
+                //Take the Information from the datareader and copy them into the appropriate text fields
                 txtInsurance.Text = dr["Insurance"].ToString();
                 txtGroupNum.Text = dr["GroupNum"].ToString();
                 txtPolicyNum.Text = dr["PolicyNum"].ToString();
@@ -105,9 +105,10 @@ namespace PatientRecords
                 //Checking if the information coming out of the DB is a datetime or is a null value in the DB
                 if (dr["SecondarySubscriberBirthdate"] != System.DBNull.Value)
                 {
+                    //If they datareader is not null then insert the value given into the date time picker
                     dtpSecondarySubscriberBirthdate.Value = (DateTime)dr["SecondarySubscriberBirthdate"];
                 }
-                else
+                else //If the datareader is null then set the date time picker to todays date
                 {
                     dtpSecondarySubscriberBirthdate.Value = DateTime.Today;
                 }
@@ -185,7 +186,7 @@ namespace PatientRecords
             {
                 //Fill label with the patients information
                 FillLabel(ApatientInsurance);
-                /*
+                
                 //Use data reader to grab last record inserted into the Patients table
                 SqlDataReader dr = ApatientInsurance.GrabLastRecord();
 
@@ -198,7 +199,7 @@ namespace PatientRecords
                     //To make sure that we are getting the newest Patient
                     lblPatientIDInsurance.Text = dr["PatientID"].ToString();
                 }
-                */
+                ApatientInsurance.PatientIDInsurance = Convert.ToInt32(lblPatientIDInsurance.Text);
                 lblFeedback.Text = ApatientInsurance.AddRecord();
             }
         }

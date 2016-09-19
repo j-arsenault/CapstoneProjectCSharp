@@ -336,6 +336,7 @@ namespace PatientRecords
             }
             else if (Convert.ToInt32(lblPID.Text) != 0)
             {
+                //Setting intPID equal to what is in lblPID
                 int intPID = Convert.ToInt32(lblPID.Text);
                 //Creating a new instance of Patient Information form
                 InsuranceInfo temp = new InsuranceInfo(intPID);
