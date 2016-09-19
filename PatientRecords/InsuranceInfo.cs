@@ -186,6 +186,7 @@ namespace PatientRecords
                 //Fill label with the patients information
                 FillLabel(ApatientInsurance);
                 /*
+                //Use data reader to grab last record inserted into the Patients table
                 SqlDataReader dr = ApatientInsurance.GrabLastRecord();
 
                 //Use this info to fill out the form
@@ -194,6 +195,7 @@ namespace PatientRecords
                 while (dr.Read())
                 {
                     //We add this one to store the ID in a hidden label on the form
+                    //To make sure that we are getting the newest Patient
                     lblPatientIDInsurance.Text = dr["PatientID"].ToString();
                 }
                 */
