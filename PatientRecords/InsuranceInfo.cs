@@ -69,7 +69,7 @@ namespace PatientRecords
             btnAdd.Visible = false;
             btnAdd.Enabled = false;
 
-            //lblInsID.Visible = false;
+            lblInsID.Visible = false;
 
             //Gather info about this one person and store it in a datareader
             PatientInsurance temp = new PatientInsurance();
@@ -182,6 +182,7 @@ namespace PatientRecords
             {
                 //Fill label with the patients information
                 FillLabel(ApatientInsurance);
+                ApatientInsurance.GrabLastRecord();
                 lblFeedback.Text = ApatientInsurance.AddRecord();
             }
         }

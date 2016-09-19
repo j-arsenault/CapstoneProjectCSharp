@@ -303,6 +303,67 @@ namespace PatientRecords
         }
 
 
+        public virtual string GrabLastRecord()
+        {
+            //Clearing strFeedback
+            string strFeedback = "";
+
+            //int PatientID = InsuranceID + 1;
+
+            //SQL Command to add a record to the Patient Information DB
+            string strSQL = "INSERT INTO PatientInsurance (PatientID, Insurance, GroupNum, PolicyNum, Copayment, SubscriberName, SubscriberBirthdate, SubscriberSocialSecNum, PatientRelationship, SecondaryInsurance, SecondaryGroupNum, SecondaryPolicyNum, SecondaryCopayment, SecondarySubscriberName, SecondarySubscriberBirthdate, SecondarySocialSecNum, SecondaryPatientRelationship) VALUES (@PatientID, @Insurance, @GroupNum, @PolicyNum, @Copayment, @SubscriberName, @SubscriberBirthdate, @SubscriberSocialSecNum, @PatientRelationship, @SecondaryInsurance, @SecondaryGroupNum, @SecondaryPolicyNum, @SecondaryCopayment, @SecondarySubscriberName, @SecondarySubscriberBirthdate, @SecondarySocialSecNum, @SecondaryPatientRelationship)";
+
+            //creating database connection 
+            SqlConnection conn = new SqlConnection();
+            //Create the who what and where of the DB
+            string strConn = MyTools.GetConnected();
+            //Creating the connection string using the oldedb conn variable and equaling it to the information gathered from connectionstring website
+            conn.ConnectionString = strConn;
+
+            //creating database command connection
+            SqlCommand comm = new SqlCommand();
+            comm.CommandText = strSQL; //Commander knows what to say
+            comm.Connection = conn;   //Getting the connection
+
+            //Fill in the parameters (has to be created in same sequence as they are used in SQL Statement).
+            comm.Parameters.AddWithValue(@"PatientID", PatientID);
+            comm.Parameters.AddWithValue(@"Insurance", Insurance);
+            comm.Parameters.AddWithValue(@"GroupNum", GroupNum);
+            comm.Parameters.AddWithValue(@"PolicyNum", PolicyNum);
+            comm.Parameters.AddWithValue(@"Copayment", Copayment);
+            comm.Parameters.AddWithValue(@"SubscriberName", SubscriberName);
+            comm.Parameters.AddWithValue(@"SubscriberBirthdate", SubscriberBirthdate.ToString());
+            comm.Parameters.AddWithValue(@"SubscriberSocialSecNum", SubscriberSocialSecNum);
+            comm.Parameters.AddWithValue(@"PatientRelationship", PatientRelationship);
+            comm.Parameters.AddWithValue(@"SecondaryInsurance", SecondaryInsurance);
+            comm.Parameters.AddWithValue(@"SecondaryGroupNum", SecondaryGroupNum);
+            comm.Parameters.AddWithValue(@"SecondaryPolicyNum", SecondaryPolicyNum);
+            comm.Parameters.AddWithValue(@"SecondaryCopayment", SecondaryCopayment);
+            comm.Parameters.AddWithValue(@"SecondarySubscriberName", SecondarySubscriberName);
+            comm.Parameters.AddWithValue(@"SecondarySubscriberBirthdate", SecondarySubscriberBirthdate.ToString());
+            comm.Parameters.AddWithValue(@"SecondarySocialSecNum", SecondarySocialSecNum);
+            comm.Parameters.AddWithValue(@"SecondaryPatientRelationship", SecondaryPatientRelationship);
+
+            try
+            {
+                //open a connection to the database
+                conn.Open();
+
+                //Giving strFeedback the number of records added
+                strFeedback = comm.ExecuteNonQuery().ToString() + " Records Added";
+
+                //close the database
+                conn.Close();
+            }
+            catch (Exception err)
+            {
+                //If we catch an error........
+                //Put the error message into strFeedback
+                strFeedback = "ERROR: " + err.Message;
+            }
+            return strFeedback;
+        }
+
         //Method that will update one persons record specified by the ID
         //It will return an integer meant for feedback for how many records were updated
         public Int32 UpdatePatientInfo()
