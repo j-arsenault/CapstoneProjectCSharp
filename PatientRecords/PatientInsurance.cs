@@ -245,9 +245,11 @@ namespace PatientRecords
         {
             //Clearing strFeedback
             string strFeedback = "";
+
+            //int PatientID = InsuranceID + 1;
             
             //SQL Command to add a record to the Patient Information DB
-            string strSQL = "INSERT INTO PatientInsurance (Insurance, GroupNum, PolicyNum, Copayment, SubscriberName, SubscriberBirthdate, SubscriberSocialSecNum, PatientRelationship, SecondaryInsurance, SecondaryGroupNum, SecondaryPolicyNum, SecondaryCopayment, SecondarySubscriberName, SecondarySubscriberBirthdate, SecondarySocialSecNum, SecondaryPatientRelationship) VALUES (@Insurance, @GroupNum, @PolicyNum, @Copayment, @SubscriberName, @SubscriberBirthdate, @SubscriberSocialSecNum, @PatientRelationship, @SecondaryInsurance, @SecondaryGroupNum, @SecondaryPolicyNum, @SecondaryCopayment, @SecondarySubscriberName, @SecondarySubscriberBirthdate, @SecondarySocialSecNum, @SecondaryPatientRelationship)";
+            string strSQL = "INSERT INTO PatientInsurance (PatientID, Insurance, GroupNum, PolicyNum, Copayment, SubscriberName, SubscriberBirthdate, SubscriberSocialSecNum, PatientRelationship, SecondaryInsurance, SecondaryGroupNum, SecondaryPolicyNum, SecondaryCopayment, SecondarySubscriberName, SecondarySubscriberBirthdate, SecondarySocialSecNum, SecondaryPatientRelationship) VALUES (@PatientID, @Insurance, @GroupNum, @PolicyNum, @Copayment, @SubscriberName, @SubscriberBirthdate, @SubscriberSocialSecNum, @PatientRelationship, @SecondaryInsurance, @SecondaryGroupNum, @SecondaryPolicyNum, @SecondaryCopayment, @SecondarySubscriberName, @SecondarySubscriberBirthdate, @SecondarySocialSecNum, @SecondaryPatientRelationship)";
 
             //creating database connection 
             SqlConnection conn = new SqlConnection();
@@ -262,6 +264,7 @@ namespace PatientRecords
             comm.Connection = conn;   //Getting the connection
 
             //Fill in the parameters (has to be created in same sequence as they are used in SQL Statement).
+            comm.Parameters.AddWithValue(@"PatientID", PatientID);
             comm.Parameters.AddWithValue(@"Insurance", Insurance);
             comm.Parameters.AddWithValue(@"GroupNum", GroupNum);
             comm.Parameters.AddWithValue(@"PolicyNum", PolicyNum);

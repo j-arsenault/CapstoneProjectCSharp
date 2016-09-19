@@ -431,5 +431,14 @@ namespace PatientRecords
                 FillLabel();
             }
         }
+
+        private void btnCopyAddress_Click(object sender, EventArgs e)
+        {
+            txtEmergencyAddress.Text = txtAddress.Text;
+            txtEmergencyAddress2.Text = txtAddress2.Text;
+            txtEmergencyCity.Text = txtCity.Text;
+            cmbEmergencyState.SelectedIndex = cmbState.SelectedIndex;
+            txtEmergencyZip.Text = txtZip.Text;
+        }
     }
 }

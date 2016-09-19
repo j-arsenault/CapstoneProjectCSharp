@@ -802,6 +802,7 @@
             this.btnCopyAddress.TabIndex = 0;
             this.btnCopyAddress.Text = "Copy Address from Patient Demographics";
             this.btnCopyAddress.UseVisualStyleBackColor = true;
+            this.btnCopyAddress.Click += new System.EventHandler(this.btnCopyAddress_Click);
             // 
             // txtEmergencyAlternatePhone
             // 
