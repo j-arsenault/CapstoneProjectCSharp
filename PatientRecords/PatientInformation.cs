@@ -162,7 +162,7 @@ namespace PatientRecords
             cmbState.Items.Add("CT");
             cmbState.Items.Add("MA");
             cmbState.Items.Add("NH");
-            cmbState.Items.Insert(0, "Please Choose One");
+            cmbState.Items.Insert(0, "Please Choose One..");
         }
 
         //Filling Marital Status Dropdown
@@ -171,7 +171,7 @@ namespace PatientRecords
             cmbMaritalStatus.Items.Add("Single");
             cmbMaritalStatus.Items.Add("Married");
             cmbMaritalStatus.Items.Add("Divorced");
-            cmbMaritalStatus.Items.Insert(0, "Please Choose One");
+            cmbMaritalStatus.Items.Insert(0, "Please Choose One..");
         }
 
         //Filling Work Status Dropdown
@@ -179,17 +179,18 @@ namespace PatientRecords
         {
             cmbWorkStatus.Items.Add("Employed");
             cmbWorkStatus.Items.Add("Unemployed");
-            cmbWorkStatus.Items.Insert(0, "Please Choose One");
+            cmbWorkStatus.Items.Insert(0, "Please Choose One..");
         }
 
         //Filling Relationship Dropdown
         public void FillRelationship()
         {
             cmbRelationship.Items.Add("Parent");
+            cmbRelationship.Items.Add("Child");
             cmbRelationship.Items.Add("Sibling");
             cmbRelationship.Items.Add("Friend");
             cmbRelationship.Items.Add("Significant Other");
-            cmbRelationship.Items.Insert(0, "Please Choose One");
+            cmbRelationship.Items.Insert(0, "Please Choose One..");
         }
 
         //Filling Emergency State Dropdown
@@ -199,7 +200,7 @@ namespace PatientRecords
             cmbEmergencyState.Items.Add("CT");
             cmbEmergencyState.Items.Add("MA");
             cmbEmergencyState.Items.Add("NH");
-            cmbEmergencyState.Items.Insert(0, "Please Choose One");
+            cmbEmergencyState.Items.Insert(0, "Please Choose One..");
         }
 
 

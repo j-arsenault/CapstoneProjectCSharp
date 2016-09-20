@@ -343,7 +343,19 @@ namespace PatientRecords
         public string MaritalStatus
         {
             get { return maritalStatus; }
-            set { maritalStatus = value; }
+            set 
+            {
+                //Validating if a marital status is selected based on length
+                if (Validation.IsValidLength(value, 6, 8))
+                {
+                    //Feedback alerting Invalid Marital Status, please select one
+                    feedback += "ERROR: Invalid Marital Status Selected! Please choose a Marital Status. \n";
+                }
+                else
+                {
+                    maritalStatus = value;
+                }
+            }
         }
 
         //Public variable for Race
@@ -483,7 +495,19 @@ namespace PatientRecords
         public string WorkStatus
         {
             get { return workStatus; }
-            set { workStatus = value; }
+            set 
+            {
+                //Validating if a Work Status is selected based on length
+                if (Validation.IsValidLength(value, 8, 10))
+                {
+                    //Feedback alerting Invalid WorkStatus, please select one
+                    feedback += "ERROR: Invalid Work Status Selected! Please choose a Work Status. \n";
+                }
+                else
+                {
+                    workStatus = value;
+                }
+            }
         }
 
         //Public variable for Occupation
@@ -492,6 +516,19 @@ namespace PatientRecords
             get { return occupation; }
             set
             {
+                /*
+                //Validating that the Last name field has at least 1 character in it
+                if (Validation.IsItFilledIn(value, 1) == false)
+                {
+                    //Feedback label telling the user to enter at least 1 character in the last name field
+                    feedback += "ERROR: Invalid Last Name...must be at least one character. \n";
+                }
+                else
+                {
+                    lName = value;
+                }
+                */
+
                 //Validating if someone has filled in the street address
                 if (!Validation.IsItFilledIn(value))
                 {
@@ -673,7 +710,19 @@ namespace PatientRecords
         public string Relationship
         {
             get { return relationship; }
-            set { relationship = value; }
+            set 
+            {
+                //Validating if a Relationships is selected based on length
+                if (Validation.IsValidLength(value, 5, 17))
+                {
+                    //Feedback alerting Invalid Relationship, please select one
+                    feedback += "ERROR: Invalid Relationship Selected! Please choose a Relationship. \n";
+                }
+                else
+                {
+                    relationship = value;
+                }
+            }
         }
 
         //Public variable for EmergencyAddress

@@ -81,6 +81,19 @@ namespace PatientRecords
             return result;
         }
 
+        //Validating the Length based on minimum and maximum length
+        static public bool IsValidLength(string temp, int minlen, int maxlen)
+        {
+            bool result = false;
+
+            if (temp.Length < minlen || temp.Length > maxlen)
+            {
+                result = true;
+            }
+
+            return result;
+        }
+
         //Validating the Email
         static public bool IsValidEmail(string temp)
         {
