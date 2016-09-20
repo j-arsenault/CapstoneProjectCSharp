@@ -32,6 +32,7 @@ namespace PatientRecords
             btnUpdate.Enabled = false;
 
             lblInsID.Visible = false;
+            lblPatientIDInsurance.Visible = false;
         }
 
         private void InsuranceInfo_Load(object sender, EventArgs e)
@@ -73,6 +74,7 @@ namespace PatientRecords
             btnAdd.Enabled = false;
 
             lblInsID.Visible = false;
+            lblPatientIDInsurance.Visible = false;
 
             //Gather info about this one person and store it in a datareader
             PatientInsurance temp = new PatientInsurance();
