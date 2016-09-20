@@ -1,7 +1,7 @@
 # CapstoneProjectCSharp
 Capstone Project Repository -- C Sharp 
 
-![Statys](https://img.shields.io/badge/Complete-75%25-orange.svg) [![CircleCI](https://img.shields.io/circleci/project/BrightFlair/PHP.Gt.svg?maxAge=2592000?style=flat-square)]()
+![Statys](https://img.shields.io/badge/Complete-80%25-orange.svg) [![CircleCI](https://img.shields.io/circleci/project/BrightFlair/PHP.Gt.svg?maxAge=2592000?style=flat-square)]()
 ![Statys](https://img.shields.io/badge/Team Members-Ian + Jameson-red.svg)
 ![Statys](https://img.shields.io/badge/Frameworks-Metro UI Modern Metro Framework-blue.svg)
 
@@ -12,7 +12,8 @@ Documentation Site:
  Tools being used are Visual Studio 2013.
 
 #To-Do's [Important]
-* Download Metro UI Framework
+* ~~Download Metro UI Framework~~
+
 * Login form
  - [x] Build Login Form
  - [x] Working Hardcoded Login
@@ -43,7 +44,7 @@ Documentation Site:
  - [x] Fill Insurance Form with data when opened from a Patient Information form who is already in the DB
  - [x] Create InsuranceInfo class to house the private variables
  - [x] Update Insurance form information and put it to the DB
- - Add new Insurance Form information
+ - [x] Add new Insurance Form information
  - [x] Open blank form when the Patient is not already in the DB
  - [x] Figure out how to allow nulls in secondary (Try to find a way to set the date to the current date if pulling from a patient who is already in the DB)
 
