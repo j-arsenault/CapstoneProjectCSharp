@@ -17,6 +17,49 @@ namespace PatientRecords
         {
             InitializeComponent();
 
+            //Test data put in right off the bat
+            //No data input for any of the dropdowns.
+            txtFname.Text = "Hello";
+            txtMname.Text = "Ima";
+            txtLname.Text = "Test";
+            txtAddress.Text = "1800 Street Lane";
+            txtAddress2.Text = "Apt 6C";
+            txtCity.Text = "CityLand";
+            //cmbState.SelectedItem = "RI";
+            txtZip.Text = "12345";
+            txtPhone.Text = "1234567890";
+            txtAlternatePhone.Text = "1234567890";
+            txtEmail.Text = "test@test.com";
+            txtGender.Text = "Male";
+            //dtpBirthdate.Value = (DateTime)dr["Birthdate"];
+            txtAge.Text = "26";
+            //cmbMaritalStatus.SelectedItem = "Single";
+            txtRace.Text = "White";
+            txtEthnicity.Text = "Irish";
+            txtLanguage.Text = "English";
+            txtHeight.Text = "5'11";
+            txtWeight.Text = "135";
+            txtPrimayCareProvider.Text = "Dr Mantis Toboggin";
+            txtInsuranceProvider.Text = "MyHealth";
+            //cmbWorkStatus.SelectedItem = "Employed";
+            txtOccupation.Text = "Tester";
+            txtEmployer.Text = "Test This";
+            txtEmployerPhone.Text = "1234567";
+            txtSchool.Text = "NEIT";
+            txtFieldofStudy.Text = "Knowledge";
+            txtSchoolPhone.Text = "1234567";
+            txtEmergencyFname.Text = "Jeff";
+            txtEmergencyMname.Text = "L";
+            txtEmergencyLname.Text = "Shnitzky";
+            //cmbRelationship.SelectedItem = "Parent";
+            txtEmergencyAddress.Text = "123 Lane Street";
+            //txtEmergencyAddress2.Text = "";
+            txtEmergencyCity.Text = "LandCity";
+            //cmbEmergencyState.SelectedItem = "RI";
+            txtEmergencyZip.Text = "54321";
+            txtEmergencyPhone.Text = "1234567890";
+            txtEmergencyAlternatePhone.Text = "1234567890";
+
             //When Form loads fill the state dropdown
             FillStateList();
             //When form loads set State index to 0

@@ -122,7 +122,7 @@
             this.gvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvResults.Location = new System.Drawing.Point(29, 112);
             this.gvResults.Name = "gvResults";
-            this.gvResults.Size = new System.Drawing.Size(753, 572);
+            this.gvResults.Size = new System.Drawing.Size(753, 379);
             this.gvResults.TabIndex = 5;
             this.gvResults.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvResults_CellContentDoubleClick);
             // 
@@ -130,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 696);
+            this.ClientSize = new System.Drawing.Size(810, 523);
             this.Controls.Add(this.gvResults);
             this.Controls.Add(this.lblLast);
             this.Controls.Add(this.lblFirst);

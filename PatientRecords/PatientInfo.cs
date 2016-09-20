@@ -217,7 +217,7 @@ namespace PatientRecords
                 if (!Validation.IsItFilledIn(value))
                 {
                     //Feedback alerting that the User needs to fill in a phone number
-                    feedback += "ERROR: Please enter a Phone Number!  EX: (555) 555-0000 \n";
+                    feedback += "ERROR: Please enter a Phone Number!  EX: 5555551234 \n";
                 }
                 //Validating if the phone number text box is filled in
                 else if (Validation.IsItFilledIn(value))
@@ -226,7 +226,7 @@ namespace PatientRecords
                     if (Validation.IsWithinRange(value, 7, 10))
                     {
                         //Feedback alerting user of invalid phone number, and showing an example of an acceptable phone number
-                        feedback += "ERROR: Invalid Phone Number!  EX: (555) 555-0000 \n";
+                        feedback += "ERROR: Invalid Phone Number!  EX: 5555551234 \n";
                     }
                     else
                     {
@@ -242,25 +242,23 @@ namespace PatientRecords
             get { return alternatePhone; }
             set
             {
-                //Validation to check if phone number text box is empty, and if so alert them to enter a phone number
-                if (!Validation.IsItFilledIn(value))
-                {
-                    //Feedback alerting that the User needs to fill in a phone number
-                    feedback += "ERROR: Please enter an Alternate Phone Number!  EX: (555) 555-0000 \n";
-                }
-                //Validating if the phone number text box is filled in
-                else if (Validation.IsItFilledIn(value))
+                //Validation to check if phone number text box is empty or not
+                if (Validation.IsItFilledIn(value))
                 {
                     //Validating if the phone number given is between 7-10 characters long
                     if (Validation.IsWithinRange(value, 7, 10))
                     {
                         //Feedback alerting user of invalid phone number, and showing an example of an acceptable phone number
-                        feedback += "ERROR: Invalid Alternate Phone Number!  EX: (555) 555-0000 \n";
+                        feedback += "ERROR: Invalid School Phone Number!  EX: 5555551234 \n";
                     }
                     else
                     {
-                        alternatePhone = value;
+                        emergencyAlternatePhone = value;
                     }
+                }
+                else
+                {
+                    emergencyAlternatePhone = value;
                 }
             }
         }
@@ -517,18 +515,6 @@ namespace PatientRecords
             set
             {
                 /*
-                //Validating that the Last name field has at least 1 character in it
-                if (Validation.IsItFilledIn(value, 1) == false)
-                {
-                    //Feedback label telling the user to enter at least 1 character in the last name field
-                    feedback += "ERROR: Invalid Last Name...must be at least one character. \n";
-                }
-                else
-                {
-                    lName = value;
-                }
-                */
-
                 //Validating if someone has filled in the street address
                 if (!Validation.IsItFilledIn(value))
                 {
@@ -539,6 +525,8 @@ namespace PatientRecords
                 {
                     occupation = value;
                 }
+                 */
+                occupation = value;
             }
         }
         //Public variable for Employer
@@ -566,25 +554,23 @@ namespace PatientRecords
             get { return employerPhone; }
             set
             {
-                //Validation to check if phone number text box is empty, and if so alert them to enter a phone number
-                if (!Validation.IsItFilledIn(value))
-                {
-                    //Feedback alerting that the User needs to fill in a phone number
-                    feedback += "ERROR: Please enter an Employer Phone Number!  EX: (555) 555-0000 \n";
-                }
-                //Validating if the phone number text box is filled in
-                else if (Validation.IsItFilledIn(value))
+                //Validation to check if phone number text box is empty or not
+                if (Validation.IsItFilledIn(value))
                 {
                     //Validating if the phone number given is between 7-10 characters long
                     if (Validation.IsWithinRange(value, 7, 10))
                     {
                         //Feedback alerting user of invalid phone number, and showing an example of an acceptable phone number
-                        feedback += "ERROR: Invalid Employer Phone Number!  EX: (555) 555-0000 \n";
+                        feedback += "ERROR: Invalid Employer Phone Number!  EX: 5555551234 \n";
                     }
                     else
                     {
                         employerPhone = value;
                     }
+                }
+                else 
+                {
+                    employerPhone = value;
                 }
             }
         }
@@ -633,25 +619,23 @@ namespace PatientRecords
             get { return schoolPhone; }
             set
             {
-                //Validation to check if phone number text box is empty, and if so alert them to enter a phone number
-                if (!Validation.IsItFilledIn(value))
-                {
-                    //Feedback alerting that the User needs to fill in a phone number
-                    feedback += "ERROR: Please enter a School Phone Number!  EX: (555) 555-0000 \n";
-                }
-                //Validating if the phone number text box is filled in
-                else if (Validation.IsItFilledIn(value))
+                //Validation to check if phone number text box is empty or not
+                if (Validation.IsItFilledIn(value))
                 {
                     //Validating if the phone number given is between 7-10 characters long
                     if (Validation.IsWithinRange(value, 7, 10))
                     {
                         //Feedback alerting user of invalid phone number, and showing an example of an acceptable phone number
-                        feedback += "ERROR: Invalid School Phone Number!  EX: (555) 555-0000 \n";
+                        feedback += "ERROR: Invalid School Phone Number!  EX: 5555551234 \n";
                     }
                     else
                     {
                         schoolPhone = value;
                     }
+                }
+                else
+                {
+                    schoolPhone = value;
                 }
             }
         }
@@ -827,7 +811,7 @@ namespace PatientRecords
                 if (!Validation.IsItFilledIn(value))
                 {
                     //Feedback alerting that the User needs to fill in a phone number
-                    feedback += "ERROR: Please enter a Emergency Contact Phone Number!  EX: (555) 555-0000 \n";
+                    feedback += "ERROR: Please enter a Emergency Contact Phone Number!  EX: 5555551234 \n";
                 }
                 //Validating if the phone number text box is filled in
                 else if (Validation.IsItFilledIn(value))
@@ -836,7 +820,7 @@ namespace PatientRecords
                     if (Validation.IsWithinRange(value, 7, 10))
                     {
                         //Feedback alerting user of invalid phone number, and showing an example of an acceptable phone number
-                        feedback += "ERROR: Invalid Emergency Contact Phone Number!  EX: (555) 555-0000 \n";
+                        feedback += "ERROR: Invalid Emergency Contact Phone Number!  EX: 5555551234 \n";
                     }
                     else
                     {
@@ -852,25 +836,23 @@ namespace PatientRecords
             get { return emergencyAlternatePhone; }
             set
             {
-                //Validation to check if phone number text box is empty, and if so alert them to enter a phone number
-                if (!Validation.IsItFilledIn(value))
-                {
-                    //Feedback alerting that the User needs to fill in a phone number
-                    feedback += "ERROR: Please enter a Emergency Contact Alternate Phone Number!  EX: (555) 555-0000 \n";
-                }
-                //Validating if the phone number text box is filled in
-                else if (Validation.IsItFilledIn(value))
+                //Validation to check if phone number text box is empty or not
+                if (Validation.IsItFilledIn(value))
                 {
                     //Validating if the phone number given is between 7-10 characters long
                     if (Validation.IsWithinRange(value, 7, 10))
                     {
                         //Feedback alerting user of invalid phone number, and showing an example of an acceptable phone number
-                        feedback += "ERROR: Invalid Emergency Contact Alternate Phone Number!  EX: (555) 555-0000 \n";
+                        feedback += "ERROR: Invalid Emergency Alternate Phone Number!  EX: 5555551234 \n";
                     }
                     else
                     {
                         emergencyAlternatePhone = value;
                     }
+                }
+                else
+                {
+                    emergencyAlternatePhone = value;
                 }
             }
         }
