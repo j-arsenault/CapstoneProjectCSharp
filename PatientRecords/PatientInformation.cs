@@ -62,8 +62,6 @@ namespace PatientRecords
 
             //When Form loads fill the state dropdown
             FillStateList();
-            //When form loads set State index to 0
-            cmbState.SelectedIndex = 0;
 
             //When form loads fill the marital status drop down
             FillMaritalStatus();
@@ -82,8 +80,6 @@ namespace PatientRecords
 
             //When form loads fill Emergency State
             FillEmergencyState();
-            //When form loads set the Emergency State index to 0
-            cmbEmergencyState.SelectedIndex = 0;
 
             //Disable Edit capabilities since they dont exist yet
             btnUpdate.Visible = false;
@@ -201,11 +197,21 @@ namespace PatientRecords
         //Filling State Dropdown
         public void FillStateList()
         {
-            cmbState.Items.Add("RI");
-            cmbState.Items.Add("CT");
-            cmbState.Items.Add("MA");
-            cmbState.Items.Add("NH");
-            cmbState.Items.Insert(0, "Please Choose One..");
+            //Get the list of states in the datareader
+            SqlDataReader dr = MyTools.GetMyStates();
+
+            //Loop through each state
+            while (dr.Read())
+            {
+                //for each state, add it to the combo box
+                cmbState.Items.Add(dr["State"].ToString());
+            }
+            //Creating and inserting an item asking user to please choose one
+            cmbState.Items.Insert(0, "Please Choose One");
+
+            //when form loads set state index to 0 
+            //This will make the "Please Choose One" show on the combo box
+            cmbState.SelectedIndex = 0;
         }
 
         //Filling Marital Status Dropdown
@@ -239,11 +245,21 @@ namespace PatientRecords
         //Filling Emergency State Dropdown
         public void FillEmergencyState()
         {
-            cmbEmergencyState.Items.Add("RI");
-            cmbEmergencyState.Items.Add("CT");
-            cmbEmergencyState.Items.Add("MA");
-            cmbEmergencyState.Items.Add("NH");
-            cmbEmergencyState.Items.Insert(0, "Please Choose One..");
+            //Get the list of states in the datareader
+            SqlDataReader dr = MyTools.GetMyStates();
+
+            //Loop through each state
+            while (dr.Read())
+            {
+                //for each state, add it to the combo box
+                cmbEmergencyState.Items.Add(dr["State"].ToString());
+            }
+            //Creating and inserting an item asking user to please choose one
+            cmbEmergencyState.Items.Insert(0, "Please Choose One");
+
+            //when form loads set state index to 0 
+            //This will make the "Please Choose One" show on the combo box
+            cmbEmergencyState.SelectedIndex = 0;
         }
 
 

@@ -970,7 +970,7 @@ namespace PatientRecords
             SqlDataAdapter da = new SqlDataAdapter();
 
             //Sql command to add a record to the persons db 
-            string strSQL = "SELECT PatientID, Fname, Mname, Lname, Address, Address2 FROM Patients WHERE 0=0";
+            string strSQL = "SELECT PatientID, Fname, Mname, Lname, Address, Address2, City, State FROM Patients WHERE 0=0";
 
             //Create the who what and where of the DB
             string strConn = MyTools.GetConnected();
