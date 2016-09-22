@@ -1,5 +1,8 @@
 # CapstoneProjectCSharp
 Capstone Project Repository -- C Sharp 
+#Login Info
+-Username: Jameson
+-Password: password
 
 ![Statys](https://img.shields.io/badge/Complete-80%25-orange.svg) [![CircleCI](https://img.shields.io/circleci/project/BrightFlair/PHP.Gt.svg?maxAge=2592000?style=flat-square)]()
 ![Statys](https://img.shields.io/badge/Team Members-Ian + Jameson-red.svg)
